@@ -101,7 +101,7 @@ export default function AboutPage({ onOpenContact }) {
             <div className="space-y-3">
               <h4 className="font-serif font-bold text-sm text-slate-800">Tiga Nilai Fondasi Penerbitan:</h4>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                {publisherInfo.pillars.map((pil, idx) => (
+                {(publisherInfo.pillars || []).map((pil, idx) => (
                   <div key={idx} className="bg-[#FAF8F5] p-3.5 rounded-xl border border-stone-200 space-y-1">
                     <CheckCircle2 className="w-4 h-4 text-emerald-800" />
                     <h5 className="font-serif font-bold text-xs text-slate-900">{pil.title}</h5>
@@ -115,7 +115,7 @@ export default function AboutPage({ onOpenContact }) {
             <div className="pt-2">
               <h4 className="font-serif font-bold text-sm text-slate-800 mb-2">Fokus Rumpun Buku:</h4>
               <div className="flex flex-wrap gap-2">
-                {publisherInfo.categoriesList.map((cat, i) => (
+                {(publisherInfo.categoriesList || []).map((cat, i) => (
                   <span key={i} className="text-xs bg-emerald-50 text-emerald-900 border border-emerald-200 px-3 py-1 rounded-full font-medium">
                     ✓ {cat}
                   </span>

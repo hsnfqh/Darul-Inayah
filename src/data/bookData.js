@@ -475,5 +475,12 @@ export const publisherInfo = {
     { title: "Berkualitas & Terpercaya", desc: "Disusun dengan dalil yang kokoh dan bersumber dari rujukan mu'tabar." },
     { title: "Menjaga Nilai-Nilai Islam", desc: "Berlandaskan Al-Qur'an dan As-Sunnah sesuai bimbingan para ulama." },
     { title: "Untuk Umat Sepanjang Masa", desc: "Karya literatur bermanfaat yang memberi tuntunan hidup lintas generasi." }
+  ],
+  categoriesList: [
+    "Buku Pendidikan Islam",
+    "Kitab-Kitab Pesantren",
+    "Buku Dakwah & Syiar Islam",
+    "Buku Referensi Keislaman",
+    "Dan Lain-lain"
   ]
 };

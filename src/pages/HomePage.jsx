@@ -95,7 +95,7 @@ export default function HomePage({ onSelectBook, onOpenReader, onOpenContact, on
 
               {/* 3 Core Pillars Pill from Poster */}
               <div className="flex flex-wrap items-center justify-center lg:justify-start gap-2.5 pt-1">
-                {publisherInfo.pillars.map((pil, idx) => (
+                {(publisherInfo.pillars || []).map((pil, idx) => (
                   <span key={idx} className="bg-[#12452b] text-emerald-100 text-xs px-3 py-1.5 rounded-lg border border-emerald-700/60 flex items-center gap-1.5">
                     <CheckCircle className="w-3.5 h-3.5 text-gold-400" />
                     <strong className="font-semibold">{pil.title}</strong>
@@ -421,7 +421,7 @@ export default function HomePage({ onSelectBook, onOpenReader, onOpenContact, on
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
-            {publisherInfo.categoriesList.map((cat, idx) => (
+            {(publisherInfo.categoriesList || []).map((cat, idx) => (
               <div 
                 key={idx}
                 className="bg-white p-5 rounded-2xl border border-stone-200 hover:border-emerald-500 hover:shadow-md transition-all text-center space-y-2"
