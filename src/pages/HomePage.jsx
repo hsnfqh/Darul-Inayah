@@ -140,13 +140,13 @@ export default function HomePage({ onScrollTo }) {
                 </div>
               </div>
 
-              {/* Action Buttons */}
-              <div className="pt-2 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3.5">
+              {/* Action Buttons (Lebih Rapi & Proporsional di Mobile) */}
+              <div className="pt-2 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 w-full max-w-xs sm:max-w-none mx-auto lg:mx-0">
                 <a
                   href={whatsappUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full sm:w-auto px-7 py-3.5 bg-gradient-to-r from-gold-400 to-gold-500 hover:from-gold-300 hover:to-gold-400 text-emerald-950 font-bold text-xs uppercase tracking-wider rounded-xl shadow-lg transition-all flex items-center justify-center gap-2.5 active:scale-95 border border-gold-300"
+                  className="w-full sm:w-auto px-6 py-3 bg-gradient-to-r from-gold-400 to-gold-500 hover:from-gold-300 hover:to-gold-400 text-emerald-950 font-bold text-xs uppercase tracking-wider rounded-xl shadow-md transition-all flex items-center justify-center gap-2 active:scale-95 border border-gold-300 text-center"
                 >
                   <MessageCircle className="w-4 h-4 fill-emerald-950/20" />
                   <span>Pesan Buku via WhatsApp</span>
@@ -154,7 +154,7 @@ export default function HomePage({ onScrollTo }) {
                 
                 <button
                   onClick={() => onScrollTo && onScrollTo('katalog')}
-                  className="w-full sm:w-auto px-6 py-3.5 bg-white/10 hover:bg-white/15 text-stone-100 text-xs font-bold uppercase tracking-wider rounded-xl border border-white/20 transition-all flex items-center justify-center gap-2"
+                  className="w-full sm:w-auto px-5 py-3 bg-white/10 hover:bg-white/15 text-stone-100 text-xs font-bold uppercase tracking-wider rounded-xl border border-white/20 transition-all flex items-center justify-center gap-2 text-center"
                 >
                   <span>Jelajahi Katalog Buku</span>
                   <ArrowRight className="w-3.5 h-3.5 text-gold-300" />
