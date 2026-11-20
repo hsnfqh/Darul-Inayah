@@ -564,6 +564,21 @@ export default function HomePage({ onScrollTo }) {
 
                 <div className="flex items-start gap-3.5 p-3.5 rounded-xl bg-[#FAF8F5] border border-stone-200/80">
                   <div className="w-10 h-10 rounded-lg bg-emerald-100/70 text-emerald-800 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <Mail className="w-5 h-5 text-emerald-800" />
+                  </div>
+                  <div>
+                    <span className="text-[11px] font-semibold uppercase tracking-wider text-slate-500 block">E-mail Resmi</span>
+                    <a 
+                      href={`mailto:${publisherInfo.email}`}
+                      className="text-sm font-bold text-slate-900 hover:text-emerald-800 transition-colors block pt-0.5 font-mono"
+                    >
+                      {publisherInfo.email}
+                    </a>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-3.5 p-3.5 rounded-xl bg-[#FAF8F5] border border-stone-200/80">
+                  <div className="w-10 h-10 rounded-lg bg-emerald-100/70 text-emerald-800 flex items-center justify-center flex-shrink-0 mt-0.5">
                     <Clock className="w-5 h-5 text-emerald-800" />
                   </div>
                   <div>

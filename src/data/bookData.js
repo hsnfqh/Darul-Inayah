@@ -147,10 +147,11 @@ export const publisherInfo = {
   contactSection: {
     badge: "Hubungi Kami",
     title: "Mari Terhubung",
-    description: "Ingin mengetahui informasi buku, ketersediaan katalog, atau menjajaki kerja sama penerbitan? Silakan hubungi Darul Inayah Publishing melalui WhatsApp.",
+    description: "Ingin mengetahui informasi buku, ketersediaan katalog, atau menjajaki kerja sama penerbitan? Silakan hubungi Darul Inayah Publishing melalui WhatsApp atau E-mail.",
     publisherName: "Darul Inayah Publishing",
     whatsappDisplay: "0821-2100-7346",
     whatsappNumber: "6282121007346",
+    email: "darulinayahpublishing@gmail.com",
     serviceType: "Informasi Buku & Penerbitan"
   },
 
@@ -158,7 +159,7 @@ export const publisherInfo = {
   brandColor: "#0F5132",
   accentColor: "#C5A059",
   address: "Kota Bekasi, Jawa Barat, Indonesia",
-  email: "redaksi@darulinayahpublishing.co.id",
+  email: "darulinayahpublishing@gmail.com",
   phone: "0821-2100-7346",
   whatsapp: "0821-2100-7346"
 };
