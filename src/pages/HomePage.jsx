@@ -31,14 +31,19 @@ export default function HomePage({ onSelectBook, onOpenReader, onOpenContact, on
 
   const flagshipBook = booksCatalog[0]; // "Mengapa Ragu Dengan Syariat Allah ?"
 
-  // Filter chapters if user searches
-  const filteredChapters = flagshipBook?.chapters?.filter(chap => {
+  // Filter chapters from tableOfContents
+  const chaptersList = flagshipBook?.tableOfContents || [];
+  const filteredChapters = chaptersList.filter(chap => {
     if (!chapterSearch.trim()) return true;
     const q = chapterSearch.toLowerCase();
-    return chap.title.toLowerCase().includes(q) || 
-           (chap.subtitle && chap.subtitle.toLowerCase().includes(q)) ||
-           (chap.sections && chap.sections.some(s => s.toLowerCase().includes(q)));
-  }) || [];
+    const titleMatch = chap.title?.toLowerCase().includes(q);
+    const subtitleMatch = chap.subtitle?.toLowerCase().includes(q);
+    const sectionMatch = chap.sections?.some(s => {
+      const sTitle = typeof s === 'string' ? s : s.title;
+      return sTitle?.toLowerCase().includes(q);
+    });
+    return titleMatch || subtitleMatch || sectionMatch;
+  });
 
   return (
     <div className="space-y-16 sm:space-y-24">
@@ -363,7 +368,7 @@ export default function HomePage({ onSelectBook, onOpenReader, onOpenContact, on
                     <span className="bg-emerald-100/80 text-emerald-900 font-bold px-2 py-0.5 rounded text-[10px]">
                       {chap.id === 'kata-pengantar' ? 'Pembuka' : chap.id === 'bab-8' ? 'Referensi' : `Bagian ${idx}`}
                     </span>
-                    <span>hlm {chap.startPage || '-'}</span>
+                    <span>hlm {chap.pageStart || '-'}</span>
                   </div>
                   <h4 className="font-serif font-bold text-sm sm:text-base text-slate-900 group-hover:text-emerald-900 transition-colors leading-snug">
                     {chap.title}
@@ -376,7 +381,9 @@ export default function HomePage({ onSelectBook, onOpenReader, onOpenContact, on
                   {chap.sections && chap.sections.length > 0 && (
                     <ul className="text-[11px] text-slate-500 space-y-1 pt-1 list-disc list-inside">
                       {chap.sections.slice(0, 3).map((sec, sIdx) => (
-                        <li key={sIdx} className="truncate">{sec}</li>
+                        <li key={sIdx} className="truncate">
+                          {typeof sec === 'string' ? sec : sec.title}
+                        </li>
                       ))}
                       {chap.sections.length > 3 && (
                         <li className="text-emerald-800 font-semibold list-none">
