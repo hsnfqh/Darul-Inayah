@@ -72,7 +72,7 @@ export default function Navbar({ onScrollTo }) {
             </div>
             <div>
               <div className="flex items-baseline gap-1.5 whitespace-nowrap">
-                <span className="font-serif font-bold text-lg sm:text-xl md:text-2xl tracking-tight text-[#0f3f22] group-hover:text-[#15803d] transition-colors">
+                <span className="font-sans font-extrabold text-lg sm:text-xl md:text-2xl tracking-tight text-[#0f3f22] group-hover:text-[#15803d] transition-colors">
                   Darul Inayah
                 </span>
                 <span className="text-[10px] sm:text-[11px] uppercase font-bold tracking-widest text-gold-600 font-sans">

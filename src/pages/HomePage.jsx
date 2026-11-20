@@ -15,7 +15,9 @@ import {
   Search,
   Sparkles,
   ArrowRight,
-  Bookmark
+  Building2,
+  Clock,
+  Send
 } from 'lucide-react';
 import { booksCatalog, catalogBooks, publisherInfo } from '../data/bookData';
 
@@ -85,7 +87,7 @@ export default function HomePage({ onScrollTo }) {
         <div className="max-w-6xl mx-auto px-4 sm:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
             
-            {/* Left Col: Prestigious Editorial Headline & Actions */}
+            {/* Left Col: Prestigious Editorial Headline & Actions (Clean Sans-Serif) */}
             <div className="lg:col-span-7 space-y-6 text-center lg:text-left">
               
               <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-gold-400/15 border border-gold-400/40 text-gold-300 text-xs font-semibold uppercase tracking-widest">
@@ -95,24 +97,24 @@ export default function HomePage({ onScrollTo }) {
 
               {/* Main Headline */}
               <div className="space-y-3">
-                <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-tight">
+                <h1 className="font-sans text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-tight">
                   Penerbitan Buku &amp; <br />
-                  <span className="text-gold-300 italic font-medium">Khazanah Keilmuan Islam</span>
+                  <span className="text-gold-300 font-bold">Khazanah Keilmuan Islam</span>
                 </h1>
                 
                 {/* Book Highlight Callout */}
                 <div className="pt-2">
                   <p className="text-xs uppercase tracking-wider text-gold-400 font-bold">Karya Pilihan Terbitan Terbaru:</p>
-                  <p className="font-serif text-xl sm:text-2xl text-stone-100 font-bold pt-1">
+                  <p className="font-sans text-xl sm:text-2xl text-stone-100 font-bold pt-1">
                     "Mengapa Ragu Dengan Syariat Allah SWT?"
                   </p>
-                  <p className="text-stone-300 text-xs sm:text-sm font-serif italic pt-0.5">
+                  <p className="text-stone-300 text-xs sm:text-sm font-medium pt-0.5">
                     Karya Al Ustadz Hidayat Taufiq
                   </p>
                 </div>
               </div>
 
-              <p className="text-stone-200 text-xs sm:text-sm leading-relaxed max-w-xl mx-auto lg:mx-0 font-light">
+              <p className="text-stone-200 text-xs sm:text-sm leading-relaxed max-w-xl mx-auto lg:mx-0 font-normal">
                 Sebuah kajian komprehensif yang menguraikan urgensi syariat Allah, kedudukan fitrah akal budi, serta relevansi nilai-nilai Islam dalam menjawab keraguan pemikiran kontemporer.
               </p>
 
@@ -179,7 +181,7 @@ export default function HomePage({ onScrollTo }) {
               <BookOpen className="w-3.5 h-3.5 text-emerald-800" />
               <span>{publisherInfo.catalogSection.badge}</span>
             </div>
-            <h2 className="font-serif text-2xl sm:text-4xl font-bold text-slate-900 tracking-tight">
+            <h2 className="font-sans text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight">
               {publisherInfo.catalogSection.title}
             </h2>
             <p className="text-xs sm:text-sm text-slate-600 leading-relaxed max-w-xl mx-auto">
@@ -219,7 +221,7 @@ export default function HomePage({ onScrollTo }) {
                   <button
                     key={cat}
                     onClick={() => setSelectedCategory(cat)}
-                    className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${
+                    className={`px-3.5 py-1.5 rounded-lg text-xs font-semibold transition-all ${
                       isActive
                         ? 'bg-[#0f3f22] text-gold-300 shadow-sm border border-emerald-900'
                         : 'bg-white border border-stone-200 text-slate-700 hover:bg-emerald-50/60 hover:text-emerald-900'
@@ -256,8 +258,8 @@ export default function HomePage({ onScrollTo }) {
                         </span>
                       </div>
 
-                      {/* Title */}
-                      <h3 className="font-serif font-bold text-lg sm:text-xl text-slate-900 leading-snug group-hover:text-emerald-900 transition-colors pt-1">
+                      {/* Title (Clean Sans-Serif) */}
+                      <h3 className="font-sans font-bold text-base sm:text-lg text-slate-900 leading-snug group-hover:text-emerald-900 transition-colors pt-1">
                         {item.title}
                       </h3>
 
@@ -307,10 +309,10 @@ export default function HomePage({ onScrollTo }) {
             <span className="text-xs font-semibold uppercase tracking-wider text-emerald-900 border-l-2 border-emerald-800 pl-2.5">
               Karya Pilihan
             </span>
-            <h2 className="font-serif text-2xl sm:text-3xl font-bold text-slate-900 mt-2">
+            <h2 className="font-sans text-2xl sm:text-3xl font-extrabold text-slate-900 mt-2">
               Mengapa Ragu Dengan Syariat Allah SWT?
             </h2>
-            <p className="text-xs sm:text-sm text-slate-500 mt-1 font-serif italic">
+            <p className="text-xs sm:text-sm text-slate-500 mt-1 font-medium">
               Karya Al Ustadz Hidayat Taufiq
             </p>
           </div>
@@ -342,7 +344,7 @@ export default function HomePage({ onScrollTo }) {
             <div className="lg:col-span-5 space-y-4">
               <div className="bg-[#FAF8F5] p-5 rounded-2xl border border-stone-200 text-xs space-y-2">
                 <Quote className="w-5 h-5 text-emerald-800/40" />
-                <p className="text-slate-700 italic leading-relaxed">
+                <p className="text-slate-700 leading-relaxed">
                   "Menjawab keragu-raguan orang tentang betapa pentingnya syariat agama Islam dalam kehidupan sehari-hari."
                 </p>
                 <div className="pt-1 border-t border-stone-200/80">
@@ -353,7 +355,7 @@ export default function HomePage({ onScrollTo }) {
 
               <div className="bg-[#FAF8F5] p-5 rounded-2xl border border-stone-200 text-xs space-y-2">
                 <Quote className="w-5 h-5 text-emerald-800/40" />
-                <p className="text-slate-700 italic leading-relaxed">
+                <p className="text-slate-700 leading-relaxed">
                   "Kondisi ummat saat ini sangat memerlukan buku seperti ini di tengah maraknya pemikiran sekuler dan liberal."
                 </p>
                 <div className="pt-1 border-t border-stone-200/80">
@@ -368,7 +370,7 @@ export default function HomePage({ onScrollTo }) {
         </div>
       </section>
 
-      {/* SECTION 4: TENTANG PENERBIT (Gaya Emasjid.id yang Bersih & Berwibawa) */}
+      {/* SECTION 4: TENTANG PENERBIT */}
       <section id="tentang" className="max-w-6xl mx-auto px-4 sm:px-8 scroll-mt-24">
         <div className="bg-[#FAF8F5] rounded-3xl border border-stone-200 shadow-sm p-6 sm:p-10 lg:p-12 space-y-8">
           
@@ -376,7 +378,7 @@ export default function HomePage({ onScrollTo }) {
             <span className="text-xs font-semibold uppercase tracking-wider text-emerald-900 border-l-2 border-emerald-800 pl-2.5">
               {publisherInfo.aboutSection.badge}
             </span>
-            <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900">
+            <h2 className="font-sans text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900">
               {publisherInfo.aboutSection.title}
             </h2>
           </div>
@@ -418,7 +420,7 @@ export default function HomePage({ onScrollTo }) {
             <span className="text-xs font-semibold uppercase tracking-wider text-emerald-900 border-b-2 border-gold-500 pb-0.5">
               {publisherInfo.servicesSection.badge}
             </span>
-            <h2 className="font-serif text-2xl sm:text-3xl font-bold text-slate-900 pt-1">
+            <h2 className="font-sans text-2xl sm:text-3xl font-extrabold text-slate-900 pt-1">
               {publisherInfo.servicesSection.title}
             </h2>
             <p className="text-xs sm:text-sm text-slate-600">
@@ -435,7 +437,7 @@ export default function HomePage({ onScrollTo }) {
                 <div className="w-12 h-12 rounded-xl bg-[#0f3f22] text-gold-400 flex items-center justify-center shadow-sm">
                   <BookOpen className="w-6 h-6 text-gold-300" />
                 </div>
-                <h3 className="font-serif font-bold text-lg text-slate-900">
+                <h3 className="font-sans font-bold text-lg text-slate-900">
                   {publisherInfo.servicesSection.services[0].title}
                 </h3>
                 <p className="text-xs text-slate-600 leading-relaxed text-justify">
@@ -461,7 +463,7 @@ export default function HomePage({ onScrollTo }) {
                 <div className="w-12 h-12 rounded-xl bg-[#0f3f22] text-gold-400 flex items-center justify-center shadow-sm">
                   <PenTool className="w-6 h-6 text-gold-300" />
                 </div>
-                <h3 className="font-serif font-bold text-lg text-slate-900">
+                <h3 className="font-sans font-bold text-lg text-slate-900">
                   {publisherInfo.servicesSection.services[1].title}
                 </h3>
                 <p className="text-xs text-slate-600 leading-relaxed text-justify">
@@ -487,7 +489,7 @@ export default function HomePage({ onScrollTo }) {
                 <div className="w-12 h-12 rounded-xl bg-[#0f3f22] text-gold-400 flex items-center justify-center shadow-sm">
                   <BookMarked className="w-6 h-6 text-gold-300" />
                 </div>
-                <h3 className="font-serif font-bold text-lg text-slate-900">
+                <h3 className="font-sans font-bold text-lg text-slate-900">
                   {publisherInfo.servicesSection.services[2].title}
                 </h3>
                 <p className="text-xs text-slate-600 leading-relaxed text-justify">
@@ -512,61 +514,113 @@ export default function HomePage({ onScrollTo }) {
         </div>
       </section>
 
-      {/* SECTION 6: HUBUNGI KAMI / MARI TERHUBUNG */}
-      <section id="kontak" className="max-w-6xl mx-auto px-4 sm:px-8 pb-12 scroll-mt-24">
-        <div className="rounded-3xl bg-gradient-to-br from-[#061e11] via-[#0f3f22] to-[#092917] text-white p-8 sm:p-12 border-2 border-gold-500/40 shadow-xl space-y-8">
+      {/* SECTION 6: HUBUNGI KAMI / MARI TERHUBUNG (Desain Rapi, Modern & Terstruktur 2-Kolom) */}
+      <section id="kontak" className="max-w-6xl mx-auto px-4 sm:px-8 pb-16 scroll-mt-24">
+        <div className="bg-white rounded-3xl border border-stone-200 shadow-sm p-6 sm:p-10 lg:p-12">
           
-          <div className="text-center max-w-2xl mx-auto space-y-2">
-            <span className="text-xs font-semibold uppercase tracking-wider text-gold-400">
-              {publisherInfo.contactSection.badge}
-            </span>
-            <h2 className="font-serif text-3xl sm:text-4xl font-bold text-white">
-              {publisherInfo.contactSection.title}
-            </h2>
-            <p className="text-xs sm:text-sm text-stone-200 leading-relaxed font-light">
-              {publisherInfo.contactSection.description}
-            </p>
-          </div>
-
-          {/* Contact Details Card */}
-          <div className="bg-emerald-950/70 rounded-2xl border border-emerald-800/80 p-6 sm:p-8 max-w-2xl mx-auto space-y-5">
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-center sm:text-left">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+            
+            {/* Left Col: Narasi & Detail Kontak Terstruktur */}
+            <div className="lg:col-span-7 space-y-6">
               
-              <div className="space-y-1">
-                <span className="text-[11px] text-stone-400 block uppercase tracking-wider">Nama Penerbit</span>
-                <strong className="text-sm font-serif text-white block">
-                  {publisherInfo.contactSection.publisherName}
-                </strong>
+              <div className="space-y-2">
+                <span className="text-xs font-bold uppercase tracking-wider text-emerald-900 bg-emerald-50 border border-emerald-200 px-3 py-1 rounded-full inline-block">
+                  {publisherInfo.contactSection.badge}
+                </span>
+                <h2 className="font-sans text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight">
+                  {publisherInfo.contactSection.title}
+                </h2>
+                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed pt-1">
+                  {publisherInfo.contactSection.description}
+                </p>
               </div>
 
-              <div className="space-y-1 sm:border-l sm:border-emerald-800/80 sm:pl-4">
-                <span className="text-[11px] text-stone-400 block uppercase tracking-wider">WhatsApp</span>
-                <strong className="text-sm font-mono text-gold-400 block">
-                  {publisherInfo.contactSection.whatsappDisplay}
-                </strong>
-              </div>
+              {/* Data List Kontak Berstruktur Bersih */}
+              <div className="space-y-3 pt-2">
+                
+                <div className="flex items-start gap-3.5 p-3.5 rounded-xl bg-[#FAF8F5] border border-stone-200/80">
+                  <div className="w-10 h-10 rounded-lg bg-emerald-100/70 text-emerald-800 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <Building2 className="w-5 h-5 text-emerald-800" />
+                  </div>
+                  <div>
+                    <span className="text-[11px] font-semibold uppercase tracking-wider text-slate-500 block">Nama Penerbit</span>
+                    <strong className="text-sm font-bold text-slate-900 block pt-0.5">
+                      {publisherInfo.contactSection.publisherName}
+                    </strong>
+                  </div>
+                </div>
 
-              <div className="space-y-1 sm:border-l sm:border-emerald-800/80 sm:pl-4">
-                <span className="text-[11px] text-stone-400 block uppercase tracking-wider">Layanan</span>
-                <strong className="text-sm text-stone-200 block">
-                  {publisherInfo.contactSection.serviceType}
-                </strong>
+                <div className="flex items-start gap-3.5 p-3.5 rounded-xl bg-[#FAF8F5] border border-stone-200/80">
+                  <div className="w-10 h-10 rounded-lg bg-emerald-100/70 text-emerald-800 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <BookOpen className="w-5 h-5 text-emerald-800" />
+                  </div>
+                  <div>
+                    <span className="text-[11px] font-semibold uppercase tracking-wider text-slate-500 block">Layanan Resmi</span>
+                    <strong className="text-sm font-bold text-slate-900 block pt-0.5">
+                      {publisherInfo.contactSection.serviceType}
+                    </strong>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-3.5 p-3.5 rounded-xl bg-[#FAF8F5] border border-stone-200/80">
+                  <div className="w-10 h-10 rounded-lg bg-emerald-100/70 text-emerald-800 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <Clock className="w-5 h-5 text-emerald-800" />
+                  </div>
+                  <div>
+                    <span className="text-[11px] font-semibold uppercase tracking-wider text-slate-500 block">Waktu Respon</span>
+                    <strong className="text-sm font-bold text-slate-900 block pt-0.5">
+                      Komunikasi Terbuka &amp; Respon Cepat Setiap Hari
+                    </strong>
+                  </div>
+                </div>
+
               </div>
 
             </div>
 
-            {/* Direct WhatsApp Action Button */}
-            <div className="pt-4 border-t border-emerald-800/60 flex flex-col sm:flex-row items-center justify-center gap-3">
-              <a
-                href={whatsappUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full sm:w-auto px-8 py-3.5 bg-gradient-to-r from-gold-400 to-gold-500 hover:from-gold-300 hover:to-gold-400 text-emerald-950 font-bold text-xs sm:text-sm tracking-wider uppercase rounded-xl shadow-lg transition-all flex items-center justify-center gap-2.5 active:scale-95 border border-gold-300"
-              >
-                <MessageCircle className="w-5 h-5 fill-emerald-950/20" />
-                <span>Hubungi via WhatsApp ({publisherInfo.contactSection.whatsappDisplay})</span>
-              </a>
+            {/* Right Col: Kartu Aksi WhatsApp Modern & Ramah */}
+            <div className="lg:col-span-5">
+              <div className="bg-[#FAF8F5] rounded-2xl border-2 border-emerald-800/20 p-6 sm:p-8 text-center space-y-5 shadow-sm">
+                
+                <div className="w-14 h-14 mx-auto rounded-2xl bg-[#0f3f22] text-gold-400 flex items-center justify-center shadow-md">
+                  <MessageCircle className="w-7 h-7 text-gold-300" />
+                </div>
+
+                <div className="space-y-1.5">
+                  <h3 className="font-sans font-bold text-lg text-slate-900">
+                    Layanan WhatsApp Resmi
+                  </h3>
+                  <p className="text-xs text-slate-600 leading-relaxed">
+                    Terhubung langsung dengan tim redaksi dan admin katalog Darul Inayah.
+                  </p>
+                </div>
+
+                {/* Nomor WhatsApp Terpampang Jelas */}
+                <div className="py-2.5 px-4 bg-white rounded-xl border border-stone-200 shadow-inner inline-block w-full">
+                  <span className="text-[11px] text-slate-500 block uppercase tracking-wider font-semibold">Nomor WhatsApp</span>
+                  <span className="font-mono font-bold text-xl sm:text-2xl text-emerald-950 block pt-0.5">
+                    {publisherInfo.contactSection.whatsappDisplay}
+                  </span>
+                </div>
+
+                {/* Tombol Aksi WhatsApp yang Jelas dan Mudah Ditekan */}
+                <a
+                  href={whatsappUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full py-3.5 px-6 bg-gradient-to-r from-emerald-800 to-emerald-900 hover:from-emerald-700 hover:to-emerald-800 text-white font-bold text-xs uppercase tracking-wider rounded-xl shadow-md transition-all flex items-center justify-center gap-2.5 active:scale-98"
+                >
+                  <MessageCircle className="w-4 h-4 text-gold-300" />
+                  <span>Chat WhatsApp Sekarang</span>
+                </a>
+
+                <p className="text-[11px] text-slate-500">
+                  Klik tombol untuk memulai percakapan instan.
+                </p>
+
+              </div>
             </div>
+
           </div>
 
         </div>

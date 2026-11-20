@@ -25,7 +25,7 @@ export default function Footer({ onScrollTo }) {
               </div>
               <div>
                 <div className="flex items-baseline gap-1.5">
-                  <span className="font-serif font-bold text-xl text-white">Darul Inayah</span>
+                  <span className="font-sans font-extrabold text-xl text-white">Darul Inayah</span>
                   <span className="text-xs uppercase text-gold-400 font-bold tracking-widest">Publishing</span>
                 </div>
                 <p className="text-xs text-stone-300">
@@ -40,7 +40,7 @@ export default function Footer({ onScrollTo }) {
 
           {/* Navigasi Menu */}
           <div className="md:col-span-3 space-y-2">
-            <h4 className="font-serif text-sm font-semibold text-gold-300 tracking-wider uppercase mb-3">
+            <h4 className="font-sans text-sm font-bold text-gold-300 tracking-wider uppercase mb-3">
               Navigasi Menu
             </h4>
             <ul className="space-y-2 text-xs text-stone-300">
@@ -97,7 +97,7 @@ export default function Footer({ onScrollTo }) {
 
           {/* Layanan & Kontak */}
           <div className="md:col-span-4 space-y-3">
-            <h4 className="font-serif text-sm font-semibold text-gold-300 tracking-wider uppercase mb-3">
+            <h4 className="font-sans text-sm font-bold text-gold-300 tracking-wider uppercase mb-3">
               Kontak Resmi
             </h4>
             <div className="space-y-2.5 text-xs text-stone-300">
@@ -134,7 +134,7 @@ export default function Footer({ onScrollTo }) {
         {/* Copyright */}
         <div className="pt-2 flex flex-col sm:flex-row justify-between items-center text-[11px] text-stone-400 gap-2">
           <p>© {new Date().getFullYear()} Darul Inayah Publishing. Hak Cipta Dilindungi Undang-Undang.</p>
-          <p className="text-gold-400/90 font-serif italic">
+          <p className="text-gold-400/90 font-medium">
             "Bersama Membangun Peradaban dengan Ilmu"
           </p>
         </div>
