@@ -11,6 +11,7 @@ export default function Navbar({ onScrollTo }) {
 
   const navItems = [
     { id: 'beranda', label: 'Beranda' },
+    { id: 'katalog', label: 'Katalog Buku' },
     { id: 'buku', label: 'Buku Pilihan' },
     { id: 'tentang', label: 'Tentang Penerbit' },
     { id: 'layanan', label: 'Layanan' },

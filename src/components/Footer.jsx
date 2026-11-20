@@ -54,6 +54,14 @@ export default function Footer({ onScrollTo }) {
               </li>
               <li>
                 <button 
+                  onClick={() => onScrollTo && onScrollTo('katalog')} 
+                  className="hover:text-gold-300 transition-colors flex items-center gap-1.5"
+                >
+                  <ChevronRight className="w-3 h-3 text-gold-500" /> Katalog Buku
+                </button>
+              </li>
+              <li>
+                <button 
                   onClick={() => onScrollTo && onScrollTo('buku')} 
                   className="hover:text-gold-300 transition-colors flex items-center gap-1.5"
                 >
