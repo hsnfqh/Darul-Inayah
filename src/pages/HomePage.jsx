@@ -119,13 +119,6 @@ export default function HomePage({ onSelectBook, onOpenReader, onOpenContact, on
                   <FileText className="w-4 h-4 text-gold-300" />
                   <span>Detail Buku & Abstrak</span>
                 </button>
-                <button
-                  onClick={() => setPosterModalOpen(true)}
-                  className="px-4 py-3.5 bg-black/40 hover:bg-black/60 text-stone-300 hover:text-white font-medium text-xs rounded-xl border border-white/10 transition-all flex items-center gap-1.5"
-                >
-                  <Maximize2 className="w-3.5 h-3.5 text-gold-400" />
-                  <span>Lihat Poster Resmi</span>
-                </button>
               </div>
             </div>
 
