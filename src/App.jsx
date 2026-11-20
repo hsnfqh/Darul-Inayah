@@ -59,6 +59,7 @@ export default function App() {
       <Navbar 
         currentPage={currentPage}
         setCurrentPage={(page) => handleNavigate(page)}
+        onOpenReader={handleOpenReader}
         onSearchClick={() => setSearchModalOpen(true)}
       />
 
@@ -102,7 +103,7 @@ export default function App() {
         {currentPage === 'book-detail' && (
           <BookDetailPage 
             bookId={selectedBookId}
-            onBack={() => handleNavigate('publications')}
+            onBack={() => handleNavigate('home')}
             onOpenReader={handleOpenReader}
             onOpenCite={(book) => setCiteBook(book)}
             onOpenContact={() => handleNavigate('contact')}

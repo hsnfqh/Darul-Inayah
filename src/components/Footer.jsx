@@ -5,14 +5,14 @@ import {
   Mail, 
   MapPin, 
   Phone, 
-  FileCheck2, 
-  Award,
-  ExternalLink,
+  BookOpen,
   ChevronRight
 } from 'lucide-react';
-import { publisherInfo } from '../data/bookData';
+import { publisherInfo, booksCatalog } from '../data/bookData';
 
-export default function Footer({ setCurrentPage }) {
+export default function Footer({ setCurrentPage, onOpenReader }) {
+  const mainBook = booksCatalog[0];
+
   return (
     <footer className="bg-[#082213] text-stone-300 border-t-4 border-gold-500 pt-16 pb-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-8">
@@ -26,29 +26,21 @@ export default function Footer({ setCurrentPage }) {
               </div>
               <div>
                 <h3 className="font-serif font-bold text-lg text-white">Darul Inayah</h3>
-                <p className="text-xs text-gold-400 uppercase tracking-widest font-semibold">Publishing House</p>
+                <p className="text-xs text-gold-400 uppercase tracking-widest font-semibold">Publishing</p>
               </div>
             </div>
             <p className="text-xs text-stone-300 leading-relaxed">
-              Portal resmi penerbitan buku akademik, khazanah ilmiah Islam, dan monograf terindeks dengan standar telaah mutu dan etika publikasi ilmiah nasional & internasional.
+              Menerbitkan buku-buku Islami berkualitas untuk umat dan generasi Muslim. Bersama membangun peradaban dengan ilmu.
             </p>
-            <div className="flex flex-wrap gap-2 pt-2">
-              <span className="text-[11px] bg-emerald-950 text-gold-300 px-2.5 py-1 rounded border border-gold-600/30 flex items-center gap-1">
-                <ShieldCheck className="w-3 h-3 text-gold-400" /> Anggota IKAPI
-              </span>
-              <span className="text-[11px] bg-emerald-950 text-emerald-200 px-2.5 py-1 rounded border border-emerald-800/40">
-                ISBN Perpusnas
-              </span>
-              <span className="text-[11px] bg-emerald-950 text-emerald-200 px-2.5 py-1 rounded border border-emerald-800/40">
-                Crossref DOI
-              </span>
+            <div className="text-[11px] text-gold-300 font-serif italic pt-1">
+              "Ilmu untuk Kehidupan, Buku untuk Peradaban"
             </div>
           </div>
 
-          {/* Col 2: Navigasi Utama */}
+          {/* Col 2: Navigasi Halaman */}
           <div>
             <h4 className="font-serif text-sm font-semibold text-gold-300 tracking-wider uppercase mb-4 flex items-center gap-1.5">
-              <BookMarked className="w-4 h-4 text-gold-400" /> Navigasi Portal
+              <BookMarked className="w-4 h-4 text-gold-400" /> Navigasi Menu
             </h4>
             <ul className="space-y-2.5 text-xs text-stone-300">
               <li>
@@ -56,7 +48,7 @@ export default function Footer({ setCurrentPage }) {
                   onClick={() => setCurrentPage('home')} 
                   className="hover:text-gold-300 transition-colors flex items-center gap-1"
                 >
-                  <ChevronRight className="w-3 h-3 text-gold-500" /> Beranda Utama
+                  <ChevronRight className="w-3 h-3 text-gold-500" /> Home
                 </button>
               </li>
               <li>
@@ -64,15 +56,7 @@ export default function Footer({ setCurrentPage }) {
                   onClick={() => setCurrentPage('about')} 
                   className="hover:text-gold-300 transition-colors flex items-center gap-1"
                 >
-                  <ChevronRight className="w-3 h-3 text-gold-500" /> Tentang Penerbit & Dewan Redaksi
-                </button>
-              </li>
-              <li>
-                <button 
-                  onClick={() => setCurrentPage('publications')} 
-                  className="hover:text-gold-300 transition-colors flex items-center gap-1"
-                >
-                  <ChevronRight className="w-3 h-3 text-gold-500" /> Katalog Publikasi & Buku
+                  <ChevronRight className="w-3 h-3 text-gold-500" /> About Us
                 </button>
               </li>
               <li>
@@ -80,7 +64,7 @@ export default function Footer({ setCurrentPage }) {
                   onClick={() => setCurrentPage('authors')} 
                   className="hover:text-gold-300 transition-colors flex items-center gap-1"
                 >
-                  <ChevronRight className="w-3 h-3 text-gold-500" /> Direktori Penulis & Kontributor
+                  <ChevronRight className="w-3 h-3 text-gold-500" /> Authors (Profil Penulis)
                 </button>
               </li>
               <li>
@@ -88,37 +72,42 @@ export default function Footer({ setCurrentPage }) {
                   onClick={() => setCurrentPage('contact')} 
                   className="hover:text-gold-300 transition-colors flex items-center gap-1"
                 >
-                  <ChevronRight className="w-3 h-3 text-gold-500" /> Hubungi Kami & Pengajuan Naskah
+                  <ChevronRight className="w-3 h-3 text-gold-500" /> Contact
                 </button>
               </li>
             </ul>
           </div>
 
-          {/* Col 3: Standar & Etika Publikasi */}
+          {/* Col 3: Terbitan Buku Resmi */}
           <div>
             <h4 className="font-serif text-sm font-semibold text-gold-300 tracking-wider uppercase mb-4 flex items-center gap-1.5">
-              <Award className="w-4 h-4 text-gold-400" /> Kebijakan Ilmiah
+              <BookOpen className="w-4 h-4 text-gold-400" /> Terbitan Buku
             </h4>
-            <div className="space-y-2.5 text-xs text-stone-300">
-              <div className="bg-emerald-950/60 p-2.5 rounded border border-emerald-900/60">
-                <span className="font-semibold text-emerald-200 block mb-0.5">Peer Review Policy:</span>
-                <span className="text-stone-300 text-[11px]">{publisherInfo.editorialPolicy.peerReview}</span>
+            {mainBook && (
+              <div className="space-y-2.5 text-xs">
+                <p className="font-serif font-bold text-white text-sm">
+                  {mainBook.title}
+                </p>
+                <p className="text-stone-300 text-[11px]">
+                  Penulis: {mainBook.author}
+                </p>
+                <p className="text-gold-400/90 font-mono text-[11px]">
+                  ISBN: {mainBook.isbn}
+                </p>
+                <button
+                  onClick={() => onOpenReader(mainBook.id, 'kata-pengantar')}
+                  className="inline-flex items-center gap-1 text-gold-300 hover:text-white underline text-[11px] pt-1"
+                >
+                  <span>Baca buku online sekarang →</span>
+                </button>
               </div>
-              <div className="bg-emerald-950/60 p-2.5 rounded border border-emerald-900/60">
-                <span className="font-semibold text-emerald-200 block mb-0.5">Uji Orisinalitas:</span>
-                <span className="text-stone-300 text-[11px]">{publisherInfo.editorialPolicy.plagiarismCheck}</span>
-              </div>
-              <div className="bg-emerald-950/60 p-2.5 rounded border border-emerald-900/60">
-                <span className="font-semibold text-emerald-200 block mb-0.5">Akses Terbuka:</span>
-                <span className="text-stone-300 text-[11px]">{publisherInfo.editorialPolicy.openAccess}</span>
-              </div>
-            </div>
+            )}
           </div>
 
           {/* Col 4: Kontak Redaksi */}
           <div>
             <h4 className="font-serif text-sm font-semibold text-gold-300 tracking-wider uppercase mb-4 flex items-center gap-1.5">
-              <FileCheck2 className="w-4 h-4 text-gold-400" /> Kantor Redaksi
+              <Mail className="w-4 h-4 text-gold-400" /> Kontak Kami
             </h4>
             <ul className="space-y-3 text-xs text-stone-300">
               <li className="flex items-start gap-2.5">
@@ -133,7 +122,7 @@ export default function Footer({ setCurrentPage }) {
               </li>
               <li className="flex items-center gap-2.5">
                 <Phone className="w-4 h-4 text-gold-400 flex-shrink-0" />
-                <span>{publisherInfo.phone} / {publisherInfo.whatsapp}</span>
+                <span>{publisherInfo.phone}</span>
               </li>
               <li className="text-[11px] text-stone-400 pt-1">
                 Jam Layanan: {publisherInfo.operatingHours}
@@ -146,12 +135,8 @@ export default function Footer({ setCurrentPage }) {
         {/* Bottom Bar */}
         <div className="pt-6 flex flex-col md:flex-row justify-between items-center text-xs text-stone-400 gap-3">
           <p>© {new Date().getFullYear()} Darul Inayah Publishing. Hak Cipta Dilindungi Undang-Undang.</p>
-          <div className="flex items-center gap-4 text-[11px]">
-            <span className="hover:text-gold-300 cursor-pointer">Kebijakan Privasi</span>
-            <span>•</span>
-            <span className="hover:text-gold-300 cursor-pointer">Syarat & Ketentuan</span>
-            <span>•</span>
-            <span className="hover:text-gold-300 cursor-pointer">Sitemap Akademik</span>
+          <div className="text-[11px] text-gold-400/80 font-serif italic">
+            "Bersama Membangun Peradaban dengan Ilmu"
           </div>
         </div>
       </div>

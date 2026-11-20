@@ -61,7 +61,7 @@ export default function BookDetailPage({ bookId, onBack, onOpenReader, onOpenCit
       <nav className="flex items-center gap-2 text-xs text-slate-500">
         <button onClick={onBack} className="hover:text-emerald-800 transition-colors flex items-center gap-1">
           <ArrowLeft className="w-3.5 h-3.5" />
-          <span>Katalog Publikasi</span>
+          <span>Kembali ke Beranda</span>
         </button>
         <span>/</span>
         <span className="text-slate-400">{book.category}</span>

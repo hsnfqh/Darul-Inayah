@@ -19,21 +19,26 @@ import {
   CheckCircle,
   Eye,
   Maximize2,
-  X
+  X,
+  ChevronRight,
+  BookmarkCheck
 } from 'lucide-react';
 import { booksCatalog, publisherInfo } from '../data/bookData';
 
 export default function HomePage({ onSelectBook, onOpenReader, onOpenContact, onNavigate }) {
-  const [searchQuery, setSearchQuery] = useState('');
+  const [chapterSearch, setChapterSearch] = useState('');
   const [posterModalOpen, setPosterModalOpen] = useState(false);
 
-  const flagshipBook = booksCatalog.find(b => b.id === 'mengapa-ragu-dengan-syariat-allah');
-  const catalogBooks = booksCatalog.filter(b => b.id !== 'mengapa-ragu-dengan-syariat-allah');
+  const flagshipBook = booksCatalog[0]; // "Mengapa Ragu Dengan Syariat Allah ?"
 
-  const handleHeroSearch = (e) => {
-    e.preventDefault();
-    onNavigate('publications', searchQuery);
-  };
+  // Filter chapters if user searches
+  const filteredChapters = flagshipBook?.chapters?.filter(chap => {
+    if (!chapterSearch.trim()) return true;
+    const q = chapterSearch.toLowerCase();
+    return chap.title.toLowerCase().includes(q) || 
+           (chap.subtitle && chap.subtitle.toLowerCase().includes(q)) ||
+           (chap.sections && chap.sections.some(s => s.toLowerCase().includes(q)));
+  }) || [];
 
   return (
     <div className="space-y-16 sm:space-y-24">
@@ -80,7 +85,7 @@ export default function HomePage({ onSelectBook, onOpenReader, onOpenContact, on
               </h1>
 
               <p className="text-stone-300 text-sm sm:text-base leading-relaxed max-w-xl mx-auto lg:mx-0 font-light">
-                Darul Inayah Publishing berkomitmen menerbitkan buku-buku Islami berkualitas untuk umat dan generasi Muslim: mulai dari buku pendidikan Islam, kitab-kitab pesantren, dakwah & syiar, hingga referensi ilmiah akademik.
+                Darul Inayah Publishing berkomitmen menerbitkan buku-buku Islami berkualitas untuk umat dan generasi Muslim: mulai dari buku pendidikan Islam, kitab-kitab pesantren, dakwah & syiar, hingga referensi ilmiah keislaman.
               </p>
 
               {/* 3 Core Pillars Pill from Poster */}
@@ -93,28 +98,30 @@ export default function HomePage({ onSelectBook, onOpenReader, onOpenContact, on
                 ))}
               </div>
 
-              {/* Search Bar */}
-              <form onSubmit={handleHeroSearch} className="max-w-xl pt-2">
-                <div className="bg-white rounded-2xl p-2 shadow-2xl flex flex-col sm:flex-row items-center gap-2 border-2 border-gold-400/40">
-                  <div className="flex items-center gap-3 px-3 w-full text-slate-700">
-                    <Search className="w-5 h-5 text-emerald-800 flex-shrink-0" />
-                    <input
-                      type="text"
-                      value={searchQuery}
-                      onChange={(e) => setSearchQuery(e.target.value)}
-                      placeholder="Cari buku, judul, nama penulis, atau ISBN..."
-                      className="w-full text-xs sm:text-sm outline-none bg-transparent placeholder-slate-400 text-slate-800"
-                    />
-                  </div>
-                  <button
-                    type="submit"
-                    className="w-full sm:w-auto px-5 py-2.5 bg-[#0f3f22] hover:bg-[#15803d] text-white font-semibold text-xs uppercase tracking-wider rounded-xl transition-all flex items-center justify-center gap-2 flex-shrink-0"
-                  >
-                    <span>Cari Buku</span>
-                    <ArrowRight className="w-4 h-4 text-gold-300" />
-                  </button>
-                </div>
-              </form>
+              {/* Hero Action Buttons */}
+              <div className="pt-3 flex flex-wrap items-center justify-center lg:justify-start gap-3">
+                <button
+                  onClick={() => onOpenReader(flagshipBook.id, 'kata-pengantar')}
+                  className="px-6 py-3.5 bg-gold-500 hover:bg-gold-600 text-emerald-950 font-bold text-xs uppercase tracking-wider rounded-xl shadow-lg transition-all flex items-center gap-2 active:scale-95"
+                >
+                  <BookOpen className="w-4 h-4 text-emerald-950" />
+                  <span>Baca Buku Digital Sekarang</span>
+                </button>
+                <button
+                  onClick={() => onSelectBook(flagshipBook.id)}
+                  className="px-5 py-3.5 bg-emerald-900/80 hover:bg-emerald-800 text-white font-semibold text-xs uppercase tracking-wider rounded-xl border border-emerald-700 transition-all flex items-center gap-2"
+                >
+                  <FileText className="w-4 h-4 text-gold-300" />
+                  <span>Detail Buku & Abstrak</span>
+                </button>
+                <button
+                  onClick={() => setPosterModalOpen(true)}
+                  className="px-4 py-3.5 bg-black/40 hover:bg-black/60 text-stone-300 hover:text-white font-medium text-xs rounded-xl border border-white/10 transition-all flex items-center gap-1.5"
+                >
+                  <Maximize2 className="w-3.5 h-3.5 text-gold-400" />
+                  <span>Lihat Poster Resmi</span>
+                </button>
+              </div>
             </div>
 
             {/* Right Col: Official Poster Feature Showcase */}
@@ -143,37 +150,37 @@ export default function HomePage({ onSelectBook, onOpenReader, onOpenContact, on
         <div className="max-w-6xl mx-auto px-4 sm:px-8 mt-12 sm:mt-16">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 bg-emerald-950/70 backdrop-blur border border-emerald-800/60 rounded-2xl p-6 text-center">
             <div className="space-y-1">
-              <div className="text-2xl sm:text-3xl font-serif font-bold text-gold-400">100+</div>
-              <div className="text-xs text-stone-300 font-medium uppercase tracking-wider">Judul Buku & Kitab</div>
-            </div>
-            <div className="space-y-1 border-l border-emerald-800/40">
               <div className="text-2xl sm:text-3xl font-serif font-bold text-gold-400">100%</div>
-              <div className="text-xs text-stone-300 font-medium uppercase tracking-wider">ISBN & Terverifikasi</div>
+              <div className="text-xs text-stone-300 font-medium uppercase tracking-wider">Kajian Syariat Orisinil</div>
             </div>
             <div className="space-y-1 border-l border-emerald-800/40">
-              <div className="text-2xl sm:text-3xl font-serif font-bold text-gold-400">50+</div>
-              <div className="text-xs text-stone-300 font-medium uppercase tracking-wider">Penulis & Cendekiawan</div>
+              <div className="text-2xl sm:text-3xl font-serif font-bold text-gold-400">ISBN</div>
+              <div className="text-xs text-stone-300 font-medium uppercase tracking-wider">Terbitan Standar Resmi</div>
             </div>
             <div className="space-y-1 border-l border-emerald-800/40">
-              <div className="text-2xl sm:text-3xl font-serif font-bold text-gold-400">10.000+</div>
-              <div className="text-xs text-stone-300 font-medium uppercase tracking-wider">Umat & Pembaca</div>
+              <div className="text-2xl sm:text-3xl font-serif font-bold text-gold-400">8 Bab</div>
+              <div className="text-xs text-stone-300 font-medium uppercase tracking-wider">Daftar Isi & Teks Digital</div>
+            </div>
+            <div className="space-y-1 border-l border-emerald-800/40">
+              <div className="text-2xl sm:text-3xl font-serif font-bold text-gold-400">Open Access</div>
+              <div className="text-xs text-stone-300 font-medium uppercase tracking-wider">Dapat Dibaca Bebas</div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Featured Flagship Publication Section */}
+      {/* Featured Publication Spotlight Section */}
       <section className="max-w-7xl mx-auto px-4 sm:px-8">
         <div className="text-center max-w-2xl mx-auto mb-10">
           <div className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-widest text-[#0f3f22] bg-emerald-100/70 px-3 py-1 rounded-full mb-3">
             <Award className="w-3.5 h-3.5 text-gold-600" />
-            <span>Karya Unggulan Pilihan Redaksi</span>
+            <span>Terbitan Buku Resmi</span>
           </div>
           <h2 className="font-serif text-2xl sm:text-4xl font-bold text-slate-900">
             Publikasi Khusus & Pembacaan Digital
           </h2>
           <p className="text-xs sm:text-sm text-slate-600 mt-2">
-            Akses langsung buku berbobot ilmiah karya Al Ustadz Hidayat Taufiq lengkap dengan digital book reader per bab.
+            Akses langsung buku ilmiah karya Al Ustadz Hidayat Taufiq lengkap dengan digital book reader per bab.
           </p>
         </div>
 
@@ -293,7 +300,7 @@ export default function HomePage({ onSelectBook, onOpenReader, onOpenContact, on
                     className="px-5 py-3 bg-[#0f3f22] hover:bg-[#15803d] text-white font-semibold text-xs uppercase tracking-wider rounded-xl shadow-md transition-all flex items-center gap-2 active:scale-95"
                   >
                     <BookOpen className="w-4 h-4 text-gold-300" />
-                    <span>Baca Buku Digital (Reader)</span>
+                    <span>Buka Digital Reader (Baca Full)</span>
                   </button>
 
                   <button
@@ -301,7 +308,7 @@ export default function HomePage({ onSelectBook, onOpenReader, onOpenContact, on
                     className="px-5 py-3 bg-white hover:bg-stone-100 text-slate-800 font-semibold text-xs uppercase tracking-wider rounded-xl border border-stone-300 transition-all flex items-center gap-2"
                   >
                     <FileText className="w-4 h-4 text-emerald-800" />
-                    <span>Detail & Daftar Isi Lengkap</span>
+                    <span>Detail & Daftar Isi</span>
                   </button>
                 </div>
 
@@ -312,96 +319,97 @@ export default function HomePage({ onSelectBook, onOpenReader, onOpenContact, on
         )}
       </section>
 
-      {/* Official Catalog Grid (Matching Poster Publications) */}
+      {/* Chapter Index Section - Clean & Functional */}
       <section className="max-w-7xl mx-auto px-4 sm:px-8">
-        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-8 gap-4">
-          <div>
-            <div className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-widest text-[#0f3f22] bg-emerald-100/70 px-3 py-1 rounded-full mb-2">
-              <BookCheck className="w-3.5 h-3.5 text-gold-600" />
-              <span>Koleksi Buku & Kitab Resmi</span>
+        <div className="bg-white rounded-3xl border border-stone-200/90 shadow-sm p-6 sm:p-10 space-y-8">
+          
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-stone-100 pb-6">
+            <div>
+              <div className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-widest text-[#0f3f22] bg-emerald-100/70 px-3 py-1 rounded-full mb-2">
+                <BookmarkCheck className="w-3.5 h-3.5 text-gold-600" />
+                <span>Daftar Isi Lengkap</span>
+              </div>
+              <h2 className="font-serif text-2xl sm:text-3xl font-bold text-slate-900">
+                Akses Langsung Pembacaan Bab
+              </h2>
+              <p className="text-xs sm:text-sm text-slate-500 mt-1">
+                Pilih bab di bawah ini untuk langsung membaca isi naskah secara digital pada web reader interaktif.
+              </p>
             </div>
-            <h2 className="font-serif text-2xl sm:text-3xl font-bold text-slate-900">
-              Katalog Terbitan Darul Inayah
-            </h2>
-            <p className="text-xs sm:text-sm text-slate-600 mt-1">
-              Buku-buku resmi sebagaimana ditampilkan dalam rilis publikasi nasional Darul Inayah Publishing.
-            </p>
+
+            {/* Quick search inside chapters */}
+            <div className="relative w-full md:w-72">
+              <Search className="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2" />
+              <input
+                type="text"
+                value={chapterSearch}
+                onChange={(e) => setChapterSearch(e.target.value)}
+                placeholder="Cari topik atau bab..."
+                className="w-full text-xs pl-9 pr-3 py-2 rounded-xl border border-stone-200 focus:outline-none focus:border-emerald-600 bg-stone-50"
+              />
+            </div>
           </div>
-          <button
-            onClick={() => onNavigate('publications')}
-            className="flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-[#0f3f22] hover:text-[#15803d] border-b-2 border-gold-400 pb-0.5"
-          >
-            <span>Buka Semua Katalog</span>
-            <ArrowRight className="w-4 h-4" />
-          </button>
-        </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {catalogBooks.map((book) => (
-            <div 
-              key={book.id}
-              className="bg-white rounded-3xl border border-stone-200 overflow-hidden shadow-sm hover:shadow-xl hover:border-gold-400 transition-all group flex flex-col justify-between"
-            >
-              <div>
-                <div className="relative aspect-[16/10] overflow-hidden bg-stone-900">
-                  <img 
-                    src={book.coverImage} 
-                    alt={book.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90" 
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
-                  
-                  <div className="absolute top-3 left-3 bg-[#0f3f22]/90 backdrop-blur text-gold-300 text-[10px] font-bold px-2.5 py-0.5 rounded">
-                    {book.category}
+          {/* Chapters Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {filteredChapters.map((chap, idx) => (
+              <div 
+                key={chap.id}
+                onClick={() => onOpenReader(flagshipBook.id, chap.id)}
+                className="p-5 rounded-2xl border border-stone-200/80 hover:border-gold-500 hover:shadow-md bg-stone-50/50 hover:bg-white transition-all cursor-pointer group flex flex-col justify-between"
+              >
+                <div className="space-y-2">
+                  <div className="flex items-center justify-between text-[11px] text-slate-400 font-mono">
+                    <span className="bg-emerald-100/80 text-emerald-900 font-bold px-2 py-0.5 rounded text-[10px]">
+                      {chap.id === 'kata-pengantar' ? 'Pembuka' : chap.id === 'bab-8' ? 'Referensi' : `Bagian ${idx}`}
+                    </span>
+                    <span>hlm {chap.startPage || '-'}</span>
                   </div>
-                  
-                  <div className="absolute bottom-3 left-3 right-3 text-white">
-                    <span className="text-[10px] text-gold-300 font-mono block">ISBN {book.isbn}</span>
-                    <h4 
-                      onClick={() => onSelectBook(book.id)}
-                      className="font-serif font-bold text-base leading-snug group-hover:text-gold-300 cursor-pointer transition-colors"
-                    >
-                      {book.title}
-                    </h4>
-                  </div>
+                  <h4 className="font-serif font-bold text-sm sm:text-base text-slate-900 group-hover:text-emerald-900 transition-colors leading-snug">
+                    {chap.title}
+                  </h4>
+                  {chap.subtitle && (
+                    <p className="text-xs text-slate-500 italic">
+                      {chap.subtitle}
+                    </p>
+                  )}
+                  {chap.sections && chap.sections.length > 0 && (
+                    <ul className="text-[11px] text-slate-500 space-y-1 pt-1 list-disc list-inside">
+                      {chap.sections.slice(0, 3).map((sec, sIdx) => (
+                        <li key={sIdx} className="truncate">{sec}</li>
+                      ))}
+                      {chap.sections.length > 3 && (
+                        <li className="text-emerald-800 font-semibold list-none">
+                          +{chap.sections.length - 3} sub-bahasan lainnya
+                        </li>
+                      )}
+                    </ul>
+                  )}
                 </div>
 
-                <div className="p-5 space-y-2">
-                  <p className="text-xs text-slate-500 font-medium">
-                    Penulis: <strong className="text-slate-800">{book.author}</strong>
-                  </p>
-                  <p className="text-xs text-slate-600 line-clamp-3 leading-relaxed text-justify">
-                    {book.shortDescription}
-                  </p>
+                <div className="pt-4 mt-3 border-t border-stone-200/60 flex items-center justify-between text-xs text-emerald-800 font-bold group-hover:translate-x-1 transition-transform">
+                  <span>Baca Bab Sekarang</span>
+                  <ChevronRight className="w-4 h-4 text-gold-600" />
                 </div>
               </div>
+            ))}
+          </div>
 
-              <div className="p-5 pt-0">
-                <div className="border-t border-stone-100 pt-3 flex items-center justify-between text-xs">
-                  <span className="text-slate-400 font-mono text-[11px]">{book.year} • {book.pages} hlm</span>
-                  <button
-                    onClick={() => onSelectBook(book.id)}
-                    className="text-emerald-800 font-bold hover:underline flex items-center gap-1"
-                  >
-                    <span>Detail & Baca</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
-                  </button>
-                </div>
-              </div>
-            </div>
-          ))}
         </div>
       </section>
 
-      {/* 5 Segments Showcase from Poster */}
+      {/* 5 Segments Showcase from Official Poster */}
       <section className="bg-stone-100/70 py-16 border-y border-stone-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-8">
           <div className="text-center max-w-2xl mx-auto mb-12">
-            <h2 className="font-serif text-2xl sm:text-3xl font-bold text-slate-900">
-              Lini Penerbitan Buku Islami
+            <span className="text-xs font-bold uppercase tracking-widest text-[#0f3f22] bg-emerald-100/70 px-3 py-1 rounded-full">
+              Fokus Publikasi
+            </span>
+            <h2 className="font-serif text-2xl sm:text-3xl font-bold text-slate-900 mt-2">
+              Lini Penerbitan Darul Inayah
             </h2>
             <p className="text-xs sm:text-sm text-slate-600 mt-2">
-              Beragam rumpun keilmuan yang secara konsisten kami terbitkan untuk kemajuan literasi umat.
+              Rumpun keilmuan yang secara konsisten diterbitkan untuk kemajuan literasi dan khazanah Islam.
             </p>
           </div>
 
@@ -409,8 +417,7 @@ export default function HomePage({ onSelectBook, onOpenReader, onOpenContact, on
             {publisherInfo.categoriesList.map((cat, idx) => (
               <div 
                 key={idx}
-                onClick={() => onNavigate('publications')}
-                className="bg-white p-5 rounded-2xl border border-stone-200 hover:border-emerald-500 hover:shadow-md cursor-pointer transition-all text-center space-y-2"
+                className="bg-white p-5 rounded-2xl border border-stone-200 hover:border-emerald-500 hover:shadow-md transition-all text-center space-y-2"
               >
                 <div className="w-10 h-10 rounded-xl bg-emerald-50 text-[#0f3f22] flex items-center justify-center mx-auto">
                   <BookOpen className="w-5 h-5 text-emerald-800" />
@@ -418,9 +425,9 @@ export default function HomePage({ onSelectBook, onOpenReader, onOpenContact, on
                 <h4 className="font-serif font-bold text-xs sm:text-sm text-slate-900">
                   {cat}
                 </h4>
-                <span className="text-[10px] text-emerald-800 font-semibold block">
-                  Lihat Judul →
-                </span>
+                <p className="text-[11px] text-slate-400">
+                  Standar Mutu Terjaga
+                </p>
               </div>
             ))}
           </div>
@@ -438,14 +445,14 @@ export default function HomePage({ onSelectBook, onOpenReader, onOpenContact, on
               Mari Dukung Penerbitan Buku Islami untuk Kebaikan Bersama
             </h3>
             <p className="text-xs sm:text-sm text-stone-300 max-w-xl">
-              Bersama membangun peradaban dengan ilmu. Ajukan naskah Anda atau berkolaborasi dalam penerbitan khazanah Islam berkualitas.
+              Bersama membangun peradaban dengan ilmu. Hubungi redaksi Darul Inayah Publishing untuk informasi pemesanan buku, kemitraan dakwah, atau distribusi pesantren.
             </p>
           </div>
           <button
             onClick={onOpenContact}
             className="px-6 py-3.5 bg-gold-500 hover:bg-gold-600 text-emerald-950 font-bold text-xs uppercase tracking-wider rounded-xl shadow-lg transition-all flex-shrink-0"
           >
-            Hubungi Redaksi
+            Hubungi Kami
           </button>
         </div>
       </section>

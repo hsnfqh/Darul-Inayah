@@ -5,7 +5,7 @@ export const booksCatalog = [
     subtitle: "Kajian Komprehensif Hikmah Diutusnya Para Rasul, Kedudukan Akal Budi, dan Kesesuaian Syariat Islam Sepanjang Masa",
     author: "Al Ustadz Hidayat Taufiq",
     authorId: "hidayat-taufiq",
-    authorAffiliation: "Darul Inayah Research Institute & Ponpes Al-Khairat Bekasi",
+    authorAffiliation: "Darul Inayah & Ponpes Al-Khairat Bekasi",
     endorsers: [
       {
         name: "DR. Said Masykur Al-Musyayakh, M.Ag, Ph.D",
@@ -20,7 +20,7 @@ export const booksCatalog = [
     category: "Buku Dakwah & Syiar Islam",
     categorySlug: "dakwah-syiar",
     year: 2019,
-    edition: "Edisi Revisi Ilmiah (Cetakan ke-2)",
+    edition: "Edisi Revisi (Cetakan ke-2)",
     isbn: "978-623-91820-4-5",
     eisbn: "978-623-91820-5-2",
     doi: "10.5281/darulinayah.2019.01",
@@ -33,17 +33,16 @@ export const booksCatalog = [
     totalReaders: 3420,
     downloadCount: 1850,
     citationCount: 42,
-    shortDescription: "Sebuah karya ilmiah keislaman yang menguraikan secara mendalam argumentasi rasional dan naqli tentang urgensi syariat Allah dalam kehidupan manusia, kedudukan akal, serta relevansi ajaran Islam di tengah tantangan pemikiran modern.",
+    shortDescription: "Sebuah karya keislaman yang menguraikan secara mendalam argumentasi rasional dan naqli tentang urgensi syariat Allah dalam kehidupan manusia, kedudukan akal budi, serta relevansi ajaran Islam di tengah tantangan pemikiran zaman.",
     abstract: `Buku ini secara komprehensif mengkaji esensi dan hikmah di balik syariat Islam serta menjawab berbagai keraguan dan kegamangan yang kerap dilontarkan oleh pemikiran kontemporer, sekuler, dan liberal. Melalui sintesis dalil-dalil naqli (Al-Qur'an dan Sunnah) serta argumen aqli (rasionalitas dan peran akal budi), buku ini membuktikan bahwa akal manusia memerlukan lentera wahyu ilahi agar tidak tersesat dalam kegelapan duniawi.
 
 Penulis mengawali pembahasan dengan menelaah hikmah mendalam diutusnya para Rasul, potret kegelapan peradaban manusia pra-Islam (Persia dan Romawi), hingga keistimewaan bangsa Arab dan kemuliaan Rasulullah SAW sebagai pembawa rahmat semesta. Lebih jauh, penulis menguraikan batasan dan fungsi fithri akal manusia dalam menerima beban hukum syariat (taklif), hakikat kebaikan dan keburukan hakiki, serta keniscayaan kembali kepada aturan Allah sebagai kunci hakiki kebahagiaan dunia dan akhirat.
 
-Karya ini dilengkapi kesaksian objektif para cendekiawan dan ilmuwan Barat terkemuka (seperti Kenneth Edward George, Prof. Mountaghmiri Watts, Brands Johny Burkz, Gul Labum, Pranco Mari Pulter, Prof. Fard Ghayum, hingga Prof. Knett Grigh) mengenai keagungan, orisinalitas, dan mukjizat abadi Al-Qur'anul Karim. Ditutup dengan kompilasi daftar pustaka mu'tabar dari khazanah klasik dan kontemporer, buku ini menjadi rujukan berharga bagi akademisi, santri, penuntut ilmu, dan masyarakat umum yang mendambakan kepastian nalar dan ketenangan iman.`,
+Karya ini dilengkapi kesaksian objektif para cendekiawan dan ilmuwan Barat terkemuka (seperti Kenneth Edward George, Prof. Mountaghmiri Watts, Brands Johny Burkz, Gul Labum, Pranco Mari Pulter, Prof. Fard Ghayum, hingga Prof. Knett Grigh) mengenai keagungan, orisinalitas, dan mukjizat abadi Al-Qur'anul Karim. Ditutup dengan kompilasi daftar pustaka mu'tabar dari khazanah klasik dan kontemporer, buku ini menjadi rujukan berharga bagi santri, penuntut ilmu, akademisi, dan masyarakat umum yang mendambakan kepastian nalar dan ketenangan iman.`,
     keywords: [
       "Syariat Islam",
       "Hikmah Para Rasul",
       "Peran Akal Budi",
-      "Epistemologi Hukum Islam",
       "Kemukjizatan Al-Qur'an",
       "Kritik Pemikiran Sekuler",
       "Akhlaq Karimah"
@@ -454,258 +453,6 @@ Karya ini dilengkapi kesaksian objektif para cendekiawan dan ilmuwan Barat terke
         ]
       }
     }
-  },
-  {
-    id: "kaya-di-jalan-allah",
-    title: "Kaya Di Jalan Allah",
-    subtitle: "Meraih Keberkahan Finansial, Keutamaan Sedekah, dan Etika Bisnis Muslim Preneur",
-    author: "Tim Riset Darul Inayah & Al Ustadz Hidayat Taufiq",
-    authorId: "hidayat-taufiq",
-    authorAffiliation: "Darul Inayah Research Institute",
-    coverImage: "https://images.unsplash.com/photo-1518458028785-8fbcd101ebb9?auto=format&fit=crop&w=600&q=80",
-    category: "Buku Referensi Keislaman",
-    categorySlug: "referensi-islam",
-    year: 2023,
-    edition: "Edisi Ke-2",
-    isbn: "978-623-91820-2-1",
-    eisbn: "978-623-91820-8-3",
-    doi: "10.5281/darulinayah.2023.kaya",
-    pages: 240,
-    language: "Bahasa Indonesia",
-    publisher: "Darul Inayah Publishing",
-    place: "Bekasi, Indonesia",
-    datePublished: "10 Mei 2023",
-    featured: false,
-    totalReaders: 2890,
-    downloadCount: 1340,
-    citationCount: 22,
-    shortDescription: "Panduan komprehensif bagi setiap Muslim untuk membangun kemandirian ekonomi, meraih kekayaan berlimpah yang halal, dan menjadikannya sarana utama menggapai ridha Allah dan kejayaan umat.",
-    abstract: `Buku 'Kaya Di Jalan Allah' membongkar kekeliruan fatal yang memandang zuhud sebagai kemiskinan dan ketidakberdayaan ekonomi. Melalui tinjauan ayat-ayat Al-Qur'an dan sirah sahabat kaya seperti Abdurrahman bin Auf dan Utsman bin Affan, buku ini memotivasi generasi Muslim untuk bangkit memegang kendali ekonomi umat dengan fondasi tauhid dan filantropi Islam.`,
-    keywords: ["Kekayaan Halal", "Sedekah Berkah", "Muslim Preneur", "Ekonomi Islam", "Zuhud Sejati"],
-    tableOfContents: [
-      { id: "sub-1", title: "Bab I: Hakikat Rezeki dan Filosofi Harta dalam Islam", pageStart: 1, pageEnd: 55, sections: [] },
-      { id: "sub-2", title: "Bab II: Jejak Konglomerat Sahabat Rasulullah SAW", pageStart: 56, pageEnd: 120, sections: [] },
-      { id: "sub-3", title: "Bab III: Mengundang Keberkahan Melalui Filantropi & Ziswaf", pageStart: 121, pageEnd: 240, sections: [] }
-    ],
-    chapters: {
-      "sub-1": {
-        title: "Bab I: Hakikat Rezeki dan Filosofi Harta dalam Islam",
-        subtitle: "Memahami Posisi Harta Sebagai Titipan Ilahi",
-        content: [
-          { type: "paragraph", text: "Harta dalam pandangan Islam adalah wasilah (sarana), bukan ghayah (tujuan akhir). Menjadi kaya di jalan Allah bermakna memanfaatkan seluruh kapasitas ikhtiar untuk menjemput rezeki halal dan melipatgandakannya demi kemaslahatan dakwah." }
-        ]
-      }
-    }
-  },
-  {
-    id: "politik-islam-kitab-klasik",
-    title: "Politik Islam: Prinsip, Kekuasaan, Keadilan, dan Amanah dalam Perspektif Kitab-Kitab Klasik",
-    subtitle: "Studi Komparatif Fiqh Siyasah Syar'iyyah Era Khulafaur Rasyidin Hingga Daulah Islamiyyah",
-    author: "DR. Said Masykur Al-Musyayakh, M.Ag, Ph.D",
-    authorId: "said-masykur",
-    authorAffiliation: "Rektor Institut Agama Islam AR-RISALAH Inhil-Riau",
-    coverImage: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=600&q=80",
-    category: "Kitab-Kitab Pesantren",
-    categorySlug: "kitab-pesantren",
-    year: 2022,
-    edition: "Edisi Ke-1",
-    isbn: "978-623-91820-3-8",
-    eisbn: "978-623-91820-9-0",
-    doi: "10.5281/darulinayah.2022.politik",
-    pages: 320,
-    language: "Bahasa Indonesia & Kutipan Turats Arab",
-    publisher: "Darul Inayah Publishing",
-    place: "Bekasi, Indonesia",
-    datePublished: "15 Agustus 2022",
-    featured: false,
-    totalReaders: 2150,
-    downloadCount: 980,
-    citationCount: 35,
-    shortDescription: "Kajian mendalam mengenai prinsip tata kelola kekuasaan, pembagian wewenang, etika kepemimpinan adil, dan peradilan dalam literatur fiqh siyasah klasik para ulama salaf.",
-    abstract: `Buku ini membedah konsep kepemimpinan dan kekuasaan dalam khazanah turats ulama kenamaan seperti Al-Mawardi (Al-Ahkam As-Sulthaniyyah), Ibnu Taimiyyah (As-Siyasah Asy-Syar'iyyah), dan Ibnu Khaldun (Muqaddimah). Penulis menawarkan kerangka berpikir komprehensif bagi tatanan politik modern yang mengedepankan musyawarah, keadilan penegakan hukum, dan akuntabilitas publik.`,
-    keywords: ["Politik Islam", "Fiqh Siyasah", "Al-Ahkam As-Sulthaniyyah", "Kepemimpinan Adil", "Turats Klasik"],
-    tableOfContents: [
-      { id: "sub-1", title: "Bab I: Konsep Dasar Imarah dan Khilafah dalam Syariat", pageStart: 1, pageEnd: 70, sections: [] },
-      { id: "sub-2", title: "Bab II: Syarat, Hak, dan Kewajiban Pemimpin Menurut Ulama Madzhab", pageStart: 71, pageEnd: 180, sections: [] },
-      { id: "sub-3", title: "Bab III: Kontekstualisasi Siyasah Syar'iyyah dalam Konstitusi Modern", pageStart: 181, pageEnd: 320, sections: [] }
-    ],
-    chapters: {
-      "sub-1": {
-        title: "Bab I: Konsep Dasar Imarah dan Khilafah dalam Syariat",
-        subtitle: "Prinsip Amanah dalam Menjaga Agama dan Mengatur Dunia",
-        content: [
-          { type: "paragraph", text: "Tujuan pokok dari kepemimpinan dalam Islam adalah hirasatuddin wa siyasatuddunya bihi (menjaga tegaknya ajaran agama dan mengatur urusan keduniaan berdasarkan tuntunan syariat)." }
-        ]
-      }
-    }
-  },
-  {
-    id: "20-cara-bikin-hidup-bahagia",
-    title: "20+ Cara Bikin Hidup Kamu Lebih Bahagia",
-    subtitle: "Seni Menata Hati, Mengurai Kecemasan, dan Menemukan Kedamaian Hakiki Sesuai Al-Qur'an & Sunnah",
-    author: "Al Ustadz Hidayat Taufiq",
-    authorId: "hidayat-taufiq",
-    authorAffiliation: "Darul Inayah Publishing",
-    coverImage: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80",
-    category: "Buku Pendidikan Islam",
-    categorySlug: "pendidikan-islam",
-    year: 2024,
-    edition: "Edisi Cetak Khusus 2024",
-    isbn: "978-623-91820-6-9",
-    eisbn: "978-623-91820-0-7",
-    doi: "10.5281/darulinayah.2024.bahagia",
-    pages: 188,
-    language: "Bahasa Indonesia",
-    publisher: "Darul Inayah Publishing",
-    place: "Bekasi, Indonesia",
-    datePublished: "02 Januari 2024",
-    featured: false,
-    totalReaders: 4120,
-    downloadCount: 2100,
-    citationCount: 15,
-    shortDescription: "Buku pengembangan diri Islami yang mengulas terapi spiritual, manajemen emosi, rasa syukur, qana'ah, dan tips praktis harian agar hidup tenang dan terbebas dari stres modern.",
-    abstract: `Kebahagiaan sejati bukanlah ketiadaan masalah, melainkan kemampuan jiwa untuk tetap tenang dan bersandar kepada Allah di setiap gelombang kehidupan. Ditulis dengan gaya bahasa renyah dan inspiratif, buku ini memberikan 20+ langkah konkret mulai dari shalat khusyuk, kekuatan istighfar, manajemen waktu, hingga kebiasaan positif harian yang menghadirkan kebahagiaan lahir dan batin.`,
-    keywords: ["Kebahagiaan Islami", "Tazkiyatun Nafs", "Kesehatan Mental", "Qanaah", "Manajemen Hati"],
-    tableOfContents: [
-      { id: "sub-1", title: "Langkah 1-5: Menata Fondasi Kedamaian Batin", pageStart: 1, pageEnd: 48, sections: [] },
-      { id: "sub-2", title: "Langkah 6-12: Mengatasi Overthinking dan Kegelisahan Hidup", pageStart: 49, pageEnd: 110, sections: [] },
-      { id: "sub-3", title: "Langkah 13-20+: Menggapai Puncak Ketenangan dalam Ibadah", pageStart: 111, pageEnd: 188, sections: [] }
-    ],
-    chapters: {
-      "sub-1": {
-        title: "Langkah 1-5: Menata Fondasi Kedamaian Batin",
-        subtitle: "Mengenal Sumber Ketenangan Jiwa",
-        content: [
-          { type: "paragraph", text: "Hati manusia memiliki fitrah yang hanya akan terisi penuh ketika ia tersambung dengan Sang Pencipta. Segala bentuk kecemasan berakar dari meletakkan harapan mutlak kepada makhluk fana." }
-        ]
-      }
-    }
-  },
-  {
-    id: "100-alasan-nabi-muhammad-berdagang",
-    title: "100 Alasan Mengapa Nabi Muhammad SAW Berdagang",
-    subtitle: "Menggali Spirit Kewirausahaan, Integritas Bisnis, dan Manajemen Perdagangan Nabawi",
-    author: "Tim Litbang Darul Inayah & Cendekiawan Sejarah",
-    authorId: "hidayat-taufiq",
-    authorAffiliation: "Darul Inayah Research Institute",
-    coverImage: "https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=600&q=80",
-    category: "Buku Referensi Keislaman",
-    categorySlug: "referensi-islam",
-    year: 2023,
-    edition: "Edisi Ke-1",
-    isbn: "978-623-91820-7-6",
-    eisbn: "978-623-91820-1-4",
-    doi: "10.5281/darulinayah.2023.dagang",
-    pages: 260,
-    language: "Bahasa Indonesia",
-    publisher: "Darul Inayah Publishing",
-    place: "Bekasi, Indonesia",
-    datePublished: "18 Oktober 2023",
-    featured: false,
-    totalReaders: 3100,
-    downloadCount: 1600,
-    citationCount: 28,
-    shortDescription: "Eksplorasi historis dan praktis mengapa Rasulullah SAW memilih perniagaan sebagai profesi utama sebelum kenabian, serta keteladanan sifat Shiddiq, Amanah, Tabligh, Fathanah dalam berniaga.",
-    abstract: `Berdagang bukan sekadar aktivitas ekonomi bagi Nabi Muhammad SAW, melainkan sarana dakwah akhlak, diplomasi peradaban, dan pembentukan karakter kemandirian. Buku ini menguraikan 100 hikmah dan alasan mendasar yang relevan diaplikasikan oleh para pengusaha, UMKM, dan profesional modern di era persaingan global.`,
-    keywords: ["Bisnis Rasulullah", "Entrepreneurship Islam", "Etika Dagang", "Sirah Nabawiyah", "Kejujuran Bisnis"],
-    tableOfContents: [
-      { id: "sub-1", title: "Bagian I: Karir Niaga Rasulullah SAW dari Syam hingga Yaman", pageStart: 1, pageEnd: 85, sections: [] },
-      { id: "sub-2", title: "Bagian II: 100 Pilar Hikmah Perniagaan Sang Nabi Terpercaya", pageStart: 86, pageEnd: 200, sections: [] },
-      { id: "sub-3", title: "Bagian III: Membangun Ekosistem Pasar Bebas Riba dan Monopoli", pageStart: 201, pageEnd: 260, sections: [] }
-    ],
-    chapters: {
-      "sub-1": {
-        title: "Bagian I: Karir Niaga Rasulullah SAW dari Syam hingga Yaman",
-        subtitle: "Perjalanan Menjadi Pebisnis Berintegritas Tinggi",
-        content: [
-          { type: "paragraph", text: "Sebelum diangkat menjadi Rasul pada usia 40 tahun, Nabi Muhammad SAW telah mengarungi rute perdagangan internasional selama lebih dari dua dekade dengan reputasi integritas mutlak (Al-Amin)." }
-        ]
-      }
-    }
-  },
-  {
-    id: "sehari-semalam-bersama-rasulullah",
-    title: "Sehari Semalam Bersama Rasulullah SAW",
-    subtitle: "Panduan Amaliyah Sunnah Harian dari Terbit Fajar Hingga Terbenam Malam",
-    author: "Al-Ustadz Al-Habib Muhammad Ahmad Vad’aq",
-    authorId: "muhammad-ahmad-vadaq",
-    authorAffiliation: "Pondok Pesantren Al-Khairat Bekasi",
-    coverImage: "https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?auto=format&fit=crop&w=600&q=80",
-    category: "Buku Dakwah & Syiar Islam",
-    categorySlug: "dakwah-syiar",
-    year: 2022,
-    edition: "Edisi Ke-3",
-    isbn: "978-623-91820-8-3",
-    eisbn: "978-623-91820-2-1",
-    doi: "10.5281/darulinayah.2022.sunnah",
-    pages: 210,
-    language: "Bahasa Indonesia & Arab",
-    publisher: "Darul Inayah Publishing",
-    place: "Bekasi, Indonesia",
-    datePublished: "12 Juni 2022",
-    featured: false,
-    totalReaders: 3780,
-    downloadCount: 2450,
-    citationCount: 19,
-    shortDescription: "Buku rujukan amaliyah praktis yang merangkum doa, dzikir, etika bergaul, shalat sunnah, dan adab keseharian Nabi Muhammad SAW yang mudah diteladani oleh setiap keluarga muslim.",
-    abstract: `Menghidupkan sunnah adalah kunci meraih cinta Allah SWT dan syafaat Nabi di hari kiamat. Disusun secara runtut kronologis sepanjang 24 jam, buku ini memandu pembaca menghayati setiap detik kehidupan dengan dzikir, kesederhanaan, dan kelembutan akhlak sebagaimana dicontohkan Rasulullah SAW.`,
-    keywords: ["Sunnah Harian", "Amalan Rasulullah", "Dzikir & Doa", "Adab Islam", "Kehidupan Berkah"],
-    tableOfContents: [
-      { id: "sub-1", title: "Bab I: Adab Bangun Tidur dan Waktu Subuh Berkah", pageStart: 1, pageEnd: 50, sections: [] },
-      { id: "sub-2", title: "Bab II: Aktivitas Siang Hari: Muamalah, Shalat Dhuha & Adab Makan", pageStart: 51, pageEnd: 130, sections: [] },
-      { id: "sub-3", title: "Bab III: Menutup Hari Bersama Keluarga dan Istirahat Malam", pageStart: 131, pageEnd: 210, sections: [] }
-    ],
-    chapters: {
-      "sub-1": {
-        title: "Bab I: Adab Bangun Tidur dan Waktu Subuh Berkah",
-        subtitle: "Menyambut Fajar dengan Rasa Syukur",
-        content: [
-          { type: "paragraph", text: "Memulai hari dengan mengingat Allah menghadirkan cahaya ketenangan bagi seluruh aktivitas. Bab ini merangkum sunnah wudhu, doa fajar, dan keutamaan shalat qabliyah subuh." }
-        ]
-      }
-    }
-  },
-  {
-    id: "al-khair-adatan-liman-aradas-saadah",
-    title: "الخير عادة لمن أراد السعادة",
-    subtitle: "Al-Khairu 'Adatun Liman Aradas Sa'adah: Khazanah Adab, Wirid, dan Tazkiyatun Nufus Santri Pesantren",
-    author: "Syaikhina wa Murabbina Al-Alim Al-Allamah",
-    authorId: "hidayat-taufiq",
-    authorAffiliation: "Darul Inayah Press & Pondok Pesantren Salafiyyah",
-    coverImage: "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=600&q=80",
-    category: "Kitab-Kitab Pesantren",
-    categorySlug: "kitab-pesantren",
-    year: 2021,
-    edition: "Edisi Kitab Kuning Berharakat",
-    isbn: "978-623-91820-9-0",
-    eisbn: "978-623-91820-3-8",
-    doi: "10.5281/darulinayah.2021.khair",
-    pages: 176,
-    language: "Bahasa Arab & Terjemah Pegon / Indonesia",
-    publisher: "Darul Inayah Publishing",
-    place: "Bekasi, Indonesia",
-    datePublished: "01 September 2021",
-    featured: false,
-    totalReaders: 2650,
-    downloadCount: 1720,
-    citationCount: 31,
-    shortDescription: "Kitab turats adab pesantren klasik berhias kaligrafi emas yang membimbing santri membiasakan amal kebajikan sebagai jalan meraih kebahagiaan sejati dunia dan akhirat.",
-    abstract: `Sebagaimana sabda Rasulullah SAW: 'Al-Khairu 'Adatun' (Kebaikan itu adalah suatu kebiasaan). Kitab ini menyajikan untaian nasihat hikmah, wirid harian ulama salaf, tata krama thalabul ilmi, serta bimbingan pembinaan qolbu bagi santri dan salik yang menempuh jalan kesempurnaan taqwa.`,
-    keywords: ["Kitab Kuning", "Turats Pesantren", "Tazkiyatun Nufus", "Adab Santri", "Wirid Salaf"],
-    tableOfContents: [
-      { id: "sub-1", title: "مقدمة الكتاب في فضل العادات الحسنة", pageStart: 1, pageEnd: 40, sections: [] },
-      { id: "sub-2", title: "فصل في آداب طلب العلم ومعاملة الخلق", pageStart: 41, pageEnd: 110, sections: [] },
-      { id: "sub-3", title: "خاتمة في الأوراد والأدعية المباركة", pageStart: 111, pageEnd: 176, sections: [] }
-    ],
-    chapters: {
-      "sub-1": {
-        title: "مقدمة الكتاب في فضل العادات الحسنة",
-        subtitle: "Mukaddimah Kitab Adab",
-        content: [
-          { type: "paragraph", text: "بسم الله الرحمن الرحيم. الحمد لله الذي جعل الخير عادة للمتقين، ويسر لهم سبل السعادة في الدارين..." }
-        ]
-      }
-    }
   }
 ];
 
@@ -717,36 +464,16 @@ export const publisherInfo = {
   posterImage: "/darul-inayah-poster.jpg",
   brandColor: "#0F5132",
   accentColor: "#C5A059",
-  address: "Jl. Inayah Press No. 45, Harapan Indah, Kota Bekasi, Jawa Barat 17131",
+  address: "Kota Bekasi, Jawa Barat, Indonesia",
   email: "redaksi@darulinayahpublishing.co.id",
-  phone: "+62 21 8899-2345",
+  phone: "+62 812-9876-5432",
   whatsapp: "+62 812-9876-5432",
   operatingHours: "Senin - Jumat: 08.00 - 16.30 WIB",
   established: 2018,
   isbnPrefix: "978-623-91820",
   pillars: [
-    { title: "Berkualitas & Terpercaya", desc: "Setiap naskah melewati telaah ketat dewan pakar dan uji orisinalitas." },
-    { title: "Menjaga Nilai-Nilai Islam", desc: "Berlandaskan Al-Qur'an dan As-Sunnah dengan manhaj wasathiyyah." },
-    { title: "Untuk Umat Sepanjang Masa", desc: "Literatur berbobot yang relevan dan memberi manfaat lintas generasi." }
-  ],
-  categoriesList: [
-    "Buku Pendidikan Islam",
-    "Kitab-Kitab Pesantren",
-    "Buku Dakwah & Syiar Islam",
-    "Buku Referensi Keislaman",
-    "Monograf Ilmiah & Akademik"
-  ],
-  indexingPartners: [
-    { name: "Perpustakaan Nasional RI (ISBN)", logo: "Perpusnas" },
-    { name: "Google Scholar Books", logo: "Google Scholar" },
-    { name: "Crossref DOI Member", logo: "Crossref" },
-    { name: "Kemenkumham Hak Cipta", logo: "Hak Cipta" },
-    { name: "Moraref Kemenag", logo: "Moraref" }
-  ],
-  editorialPolicy: {
-    peerReview: "Double-Blind Peer Review oleh minimal 2 mitra bestari independen",
-    plagiarismCheck: "Maksimal toleransi Turnitin / iThenticate similarity index 15%",
-    openAccess: "Mendukung prinsip Open Monograph & Fair Academic Use",
-    ethics: "Mengadopsi Committee on Publication Ethics (COPE) Standards"
-  }
+    { title: "Berkualitas & Terpercaya", desc: "Disusun dengan dalil yang kokoh dan bersumber dari rujukan mu'tabar." },
+    { title: "Menjaga Nilai-Nilai Islam", desc: "Berlandaskan Al-Qur'an dan As-Sunnah sesuai bimbingan para ulama." },
+    { title: "Untuk Umat Sepanjang Masa", desc: "Karya literatur bermanfaat yang memberi tuntunan hidup lintas generasi." }
+  ]
 };

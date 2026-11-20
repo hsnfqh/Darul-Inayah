@@ -6,11 +6,10 @@ import {
   Clock, 
   Send, 
   CheckCircle2, 
-  FileText, 
-  MessageSquare, 
   Building,
   HelpCircle,
-  ShieldCheck
+  ShieldCheck,
+  BookOpen
 } from 'lucide-react';
 import { publisherInfo } from '../data/bookData';
 
@@ -18,10 +17,10 @@ export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
-    title: '',
+    institution: '',
     email: '',
     phone: '',
-    category: 'naskah-baru',
+    category: 'pemesanan-buku',
     subject: '',
     message: ''
   });
@@ -42,13 +41,13 @@ export default function ContactPage() {
       {/* Header Banner */}
       <div className="border-b border-stone-200 pb-8">
         <span className="text-xs font-bold uppercase tracking-widest text-emerald-800 bg-emerald-50 px-2.5 py-1 rounded">
-          Layanan Komunikasi & Redaksi
+          Layanan Komunikasi & Pemesanan
         </span>
         <h1 className="font-serif text-3xl sm:text-4xl font-bold text-slate-900 mt-2">
-          Hubungi Kantor Redaksi
+          Hubungi Darul Inayah Publishing
         </h1>
         <p className="text-sm text-slate-600 mt-1 max-w-2xl">
-          Silakan hubungi kami untuk pengajuan naskah monograf, pemesanan buku cetak, kemitraan perpustakaan, atau konsultasi hak cipta dan penerbitan ISBN.
+          Silakan hubungi kami untuk informasi pemesanan buku, distribusi pondok pesantren, wakaf buku ke perpustakaan, atau konsultasi seputar penerbitan buku Islami.
         </p>
       </div>
 
@@ -59,7 +58,7 @@ export default function ContactPage() {
           <div className="bg-white p-6 rounded-3xl border border-stone-200 shadow-sm space-y-6">
             <h3 className="font-serif font-bold text-lg text-slate-900 border-b border-stone-100 pb-3 flex items-center gap-2">
               <Building className="w-5 h-5 text-emerald-800" />
-              <span>Kantor Redaksi & Penerbitan</span>
+              <span>Kantor Penerbitan & Layanan</span>
             </h3>
 
             <div className="space-y-4 text-xs text-slate-600">
@@ -84,7 +83,7 @@ export default function ContactPage() {
               <div className="flex items-start gap-3">
                 <Phone className="w-4 h-4 text-emerald-800 flex-shrink-0 mt-0.5" />
                 <div>
-                  <strong className="text-slate-800 block mb-0.5">Telepon & WhatsApp Resmi:</strong>
+                  <strong className="text-slate-800 block mb-0.5">Telepon & WhatsApp:</strong>
                   <span>{publisherInfo.phone} / {publisherInfo.whatsapp}</span>
                 </div>
               </div>
@@ -101,9 +100,9 @@ export default function ContactPage() {
             <div className="bg-[#FAF8F5] p-4 rounded-2xl border border-stone-200 text-[11px] text-slate-600 space-y-1">
               <span className="font-bold text-emerald-900 block flex items-center gap-1">
                 <ShieldCheck className="w-3.5 h-3.5 text-gold-600" />
-                Jaminan Respons Cepat
+                Komitmen Pelayanan Umat
               </span>
-              <p>Setiap naskah masuk akan memperoleh nomor registrasi penerimaan naskah maksimal dalam 2x24 jam hari kerja.</p>
+              <p>Setiap pertanyaan, konsultasi, dan pemesanan buku akan ditindaklanjuti dengan ramah dan cepat oleh staf kami.</p>
             </div>
           </div>
 
@@ -111,24 +110,24 @@ export default function ContactPage() {
           <div className="bg-emerald-50/60 p-6 rounded-3xl border border-emerald-100 space-y-3">
             <h4 className="font-serif font-bold text-sm text-emerald-950 flex items-center gap-1.5">
               <HelpCircle className="w-4 h-4 text-emerald-800" />
-              <span>Pertanyaan Umum (FAQ)</span>
+              <span>Informasi Pemesanan & Kerjasama</span>
             </h4>
             <div className="text-xs text-slate-700 space-y-2 leading-relaxed">
-              <p><strong>Berapa lama proses peer-review?</strong> Rata-rata 2 hingga 4 pekan sejak naskah dinyatakan lolos uji similarity index.</p>
-              <p><strong>Apakah penulis memperoleh royalti?</strong> Ya, sistem bagi hasil royalti berbasis cetak maupun lisensi digital diatur transparan dalam Surat Perjanjian Penerbitan.</p>
+              <p><strong>Bagaimana cara membeli buku fisik?</strong> Anda dapat mengisi formulir di samping atau langsung menghubungi WhatsApp resmi penerbit untuk pengiriman buku ke seluruh Indonesia.</p>
+              <p><strong>Apakah melayani pengadaan buku pesantren & masjid?</strong> Ya, kami menyediakan paket khusus untuk perpustakaan pesantren, madrasah, dan majelis taklim dengan harga khusus dakwah.</p>
             </div>
           </div>
         </div>
 
-        {/* Right Column: Interactive Form */}
+        {/* Right Column: Clean Interactive Contact Form */}
         <div className="lg:col-span-7">
           <div className="bg-white p-8 rounded-3xl border border-stone-200 shadow-xl space-y-6">
             <div>
               <h3 className="font-serif font-bold text-2xl text-slate-900">
-                Formulir Pengajuan Naskah & Konsultasi
+                Formulir Hubungi Kami
               </h3>
               <p className="text-xs text-slate-500 mt-1">
-                Lengkapi formulir di bawah ini untuk memulai proses penerbitan karya Anda.
+                Kirimkan pesan, pertanyaan, atau permohonan pemesanan buku melalui formulir di bawah ini.
               </p>
             </div>
 
@@ -138,27 +137,27 @@ export default function ContactPage() {
                   <CheckCircle2 className="w-8 h-8" />
                 </div>
                 <h4 className="font-serif font-bold text-xl text-emerald-950">
-                  Pengajuan Berhasil Dikirim!
+                  Pesan Berhasil Dikirim!
                 </h4>
                 <p className="text-xs text-slate-600 max-w-md mx-auto leading-relaxed">
-                  Terima kasih, <strong>{formData.name}</strong>. Tim redaksi Darul Inayah Publishing telah menerima informasi naskah Anda. Kami akan menghubungi Anda melalui email <strong>{formData.email}</strong> atau WhatsApp dalam waktu 1-2 hari kerja.
+                  Terima kasih, <strong>{formData.name}</strong>. Pesan Anda telah diterima oleh tim Darul Inayah Publishing. Kami akan segera menghubungi Anda melalui email <strong>{formData.email}</strong> atau WhatsApp.
                 </p>
                 <button
                   onClick={() => {
                     setSubmitted(false);
                     setFormData({
                       name: '',
-                      title: '',
+                      institution: '',
                       email: '',
                       phone: '',
-                      category: 'naskah-baru',
+                      category: 'pemesanan-buku',
                       subject: '',
                       message: ''
                     });
                   }}
                   className="px-5 py-2.5 bg-[#0f3f22] text-white text-xs font-semibold rounded-xl hover:bg-[#15803d] transition-colors"
                 >
-                  Kirim Pengajuan Baru
+                  Kirim Pesan Lain
                 </button>
               </div>
             ) : (
@@ -166,7 +165,7 @@ export default function ContactPage() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-xs font-semibold text-slate-700 mb-1">
-                      Nama Lengkap & Gelar *
+                      Nama Lengkap *
                     </label>
                     <input
                       type="text"
@@ -174,20 +173,20 @@ export default function ContactPage() {
                       required
                       value={formData.name}
                       onChange={handleChange}
-                      placeholder="Contoh: Dr. H. Fulan, M.Ag"
+                      placeholder="Nama Anda"
                       className="w-full text-xs p-3 rounded-xl border border-stone-200 focus:border-emerald-700 focus:outline-none"
                     />
                   </div>
                   <div>
                     <label className="block text-xs font-semibold text-slate-700 mb-1">
-                      Institusi / Universitas / Lembaga
+                      Institusi / Pesantren / Lembaga (Opsional)
                     </label>
                     <input
                       type="text"
-                      name="title"
-                      value={formData.title}
+                      name="institution"
+                      value={formData.institution}
                       onChange={handleChange}
-                      placeholder="Contoh: UIN / IAI / Pesantren..."
+                      placeholder="Pesantren / Majelis / Instansi..."
                       className="w-full text-xs p-3 rounded-xl border border-stone-200 focus:border-emerald-700 focus:outline-none"
                     />
                   </div>
@@ -204,13 +203,13 @@ export default function ContactPage() {
                       required
                       value={formData.email}
                       onChange={handleChange}
-                      placeholder="penulis@email.com"
+                      placeholder="nama@email.com"
                       className="w-full text-xs p-3 rounded-xl border border-stone-200 focus:border-emerald-700 focus:outline-none"
                     />
                   </div>
                   <div>
                     <label className="block text-xs font-semibold text-slate-700 mb-1">
-                      Nomor Telepon / WhatsApp
+                      Nomor Telepon / WhatsApp *
                     </label>
                     <input
                       type="tel"
@@ -225,7 +224,7 @@ export default function ContactPage() {
 
                 <div>
                   <label className="block text-xs font-semibold text-slate-700 mb-1">
-                    Jenis Layanan / Kategori Pengajuan
+                    Kategori Keperluan
                   </label>
                   <select
                     name="category"
@@ -233,16 +232,16 @@ export default function ContactPage() {
                     onChange={handleChange}
                     className="w-full text-xs p-3 rounded-xl border border-stone-200 focus:border-emerald-700 focus:outline-none text-slate-700 bg-white"
                   >
-                    <option value="naskah-baru">Pengajuan Naskah Buku / Monograf Baru</option>
-                    <option value="konversi-disertasi">Konversi Tesis / Disertasi ke Buku Ber-ISBN</option>
-                    <option value="pesanan-cetak">Pemesanan Buku Cetak / Hardcover</option>
-                    <option value="kerjasama-kampus">Kerjasama Penerbitan Institusi / Perpustakaan</option>
+                    <option value="pemesanan-buku">Pemesanan Buku "Mengapa Ragu Dengan Syariat Allah ?"</option>
+                    <option value="wakaf-pesantren">Pengadaan Buku Pesantren & Perpustakaan</option>
+                    <option value="konsultasi-penerbitan">Konsultasi Penerbitan Naskah Buku Islami</option>
+                    <option value="pertanyaan-umum">Pertanyaan Umum & Kerjasama</option>
                   </select>
                 </div>
 
                 <div>
                   <label className="block text-xs font-semibold text-slate-700 mb-1">
-                    Judul Naskah / Subjek Riset *
+                    Subjek / Judul Pesan *
                   </label>
                   <input
                     type="text"
@@ -250,21 +249,21 @@ export default function ContactPage() {
                     required
                     value={formData.subject}
                     onChange={handleChange}
-                    placeholder="Tuliskan rancangan judul buku Anda..."
+                    placeholder="Contoh: Pemesanan Buku Cetak untuk Perpustakaan"
                     className="w-full text-xs p-3 rounded-xl border border-stone-200 focus:border-emerald-700 focus:outline-none"
                   />
                 </div>
 
                 <div>
                   <label className="block text-xs font-semibold text-slate-700 mb-1">
-                    Abstrak Singkat / Catatan untuk Redaksi
+                    Isi Pesan / Pertanyaan
                   </label>
                   <textarea
                     rows={4}
                     name="message"
                     value={formData.message}
                     onChange={handleChange}
-                    placeholder="Uraikan ringkasan isi buku, jumlah bab, perkiraan halaman, dan tujuan penulisan..."
+                    placeholder="Tuliskan rincian pesan, pertanyaan, atau alamat pengiriman Anda di sini..."
                     className="w-full text-xs p-3 rounded-xl border border-stone-200 focus:border-emerald-700 focus:outline-none"
                   ></textarea>
                 </div>
@@ -275,7 +274,7 @@ export default function ContactPage() {
                     className="w-full py-3.5 bg-[#0f3f22] hover:bg-[#15803d] text-white text-xs font-semibold uppercase tracking-wider rounded-xl shadow-lg transition-all flex items-center justify-center gap-2 active:scale-95"
                   >
                     <Send className="w-4 h-4 text-gold-300" />
-                    <span>Kirim Pengajuan Ke Dewan Redaksi</span>
+                    <span>Kirim Pesan ke Darul Inayah</span>
                   </button>
                 </div>
               </form>
