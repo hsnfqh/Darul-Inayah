@@ -15,8 +15,7 @@ import {
   Search,
   Sparkles,
   ArrowRight,
-  Bookmark,
-  ShieldCheck
+  Bookmark
 } from 'lucide-react';
 import { booksCatalog, catalogBooks, publisherInfo } from '../data/bookData';
 
@@ -24,8 +23,6 @@ export default function HomePage({ onScrollTo }) {
   const [promoModalOpen, setPromoModalOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('Semua');
-
-  const book = booksCatalog[0];
 
   const defaultWaNumber = publisherInfo.contactSection.whatsappNumber;
   const whatsappUrl = `https://wa.me/${defaultWaNumber}?text=Assalamu'alaikum%20Darul%20Inayah%20Publishing,%20saya%20ingin%20memesan%20buku%20Mengapa%20Ragu%20Dengan%20Syariat%20Allah.`;
@@ -140,19 +137,6 @@ export default function HomePage({ onScrollTo }) {
                 </button>
               </div>
 
-              {/* Trust Badge */}
-              <div className="pt-2 flex flex-wrap items-center justify-center lg:justify-start gap-4 text-xs text-stone-300 font-light">
-                <span className="flex items-center gap-1.5">
-                  <ShieldCheck className="w-4 h-4 text-emerald-400" />
-                  <span>Penerbitan Resmi</span>
-                </span>
-                <span className="text-stone-500">•</span>
-                <span className="flex items-center gap-1.5">
-                  <MessageCircle className="w-4 h-4 text-gold-400" />
-                  <span>Respon Cepat: <strong>{publisherInfo.contactSection.whatsappDisplay}</strong></span>
-                </span>
-              </div>
-
             </div>
 
             {/* Right Col: Poster Showcase Frame */}
@@ -187,11 +171,11 @@ export default function HomePage({ onScrollTo }) {
 
       {/* SECTION 2: KATALOG PILIHAN */}
       <section id="katalog" className="max-w-6xl mx-auto px-4 sm:px-8 scroll-mt-24">
-        <div className="bg-[#FAF8F5] rounded-3xl border border-stone-200/90 shadow-sm p-6 sm:p-10 lg:p-12 space-y-8">
+        <div className="bg-white rounded-3xl border border-stone-200 shadow-sm p-6 sm:p-10 lg:p-12 space-y-8">
           
           {/* Header */}
           <div className="text-center max-w-2xl mx-auto space-y-2">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100/70 border border-emerald-300/80 text-emerald-900 text-xs font-bold uppercase tracking-wider">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200/80 text-emerald-900 text-xs font-bold uppercase tracking-wider">
               <BookOpen className="w-3.5 h-3.5 text-emerald-800" />
               <span>{publisherInfo.catalogSection.badge}</span>
             </div>
@@ -215,7 +199,7 @@ export default function HomePage({ onScrollTo }) {
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder={publisherInfo.catalogSection.searchPlaceholder}
-                className="w-full pl-11 pr-10 py-3 bg-white border border-stone-300 rounded-xl text-xs sm:text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-800 focus:border-emerald-800 shadow-sm transition-all"
+                className="w-full pl-11 pr-10 py-3 bg-[#FAF8F5] border border-stone-300 rounded-xl text-xs sm:text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-800 focus:border-emerald-800 shadow-sm transition-all"
               />
               {searchQuery && (
                 <button 
@@ -257,17 +241,17 @@ export default function HomePage({ onScrollTo }) {
                 return (
                   <div 
                     key={item.id}
-                    className="bg-white rounded-2xl border border-stone-200/90 shadow-sm hover:shadow-md hover:border-gold-500/70 transition-all duration-200 flex flex-col justify-between overflow-hidden group"
+                    className="bg-[#FAF8F5] rounded-2xl border border-stone-200 shadow-sm hover:shadow-md hover:border-emerald-700/60 transition-all duration-200 flex flex-col justify-between overflow-hidden group"
                   >
                     {/* Top Spine / Tag Strip */}
                     <div className="p-6 space-y-3.5 flex-1 flex flex-col">
                       
                       {/* Book Tag Badge */}
                       <div className="flex items-center justify-between gap-2">
-                        <span className="text-[10px] font-bold tracking-wider uppercase text-emerald-900 bg-emerald-50 px-2.5 py-1 rounded-md border border-emerald-200/70 inline-block">
+                        <span className="text-[10px] font-bold tracking-wider uppercase text-emerald-900 bg-emerald-100/70 px-2.5 py-1 rounded-md border border-emerald-200 inline-block">
                           {item.tag}
                         </span>
-                        <span className="text-[10px] font-semibold text-gold-700 bg-gold-50 border border-gold-200/60 px-2 py-0.5 rounded">
+                        <span className="text-[10px] font-semibold text-gold-800 bg-gold-100/70 border border-gold-200 px-2 py-0.5 rounded">
                           {item.category}
                         </span>
                       </div>
@@ -285,7 +269,7 @@ export default function HomePage({ onScrollTo }) {
                     </div>
 
                     {/* Bottom Action Footer */}
-                    <div className="px-6 pb-6 pt-2 border-t border-stone-100 bg-stone-50/50">
+                    <div className="px-6 pb-6 pt-3 border-t border-stone-200/80 bg-white">
                       <a
                         href={itemWaUrl}
                         target="_blank"
@@ -300,7 +284,7 @@ export default function HomePage({ onScrollTo }) {
                 );
               })
             ) : (
-              <div className="col-span-full py-12 text-center space-y-3 bg-white rounded-2xl border border-stone-200">
+              <div className="col-span-full py-12 text-center space-y-3 bg-[#FAF8F5] rounded-2xl border border-stone-200">
                 <p className="text-slate-500 text-sm">Tidak ada buku yang sesuai dengan pencarian "{searchQuery}".</p>
                 <button
                   onClick={() => { setSearchQuery(''); setSelectedCategory('Semua'); }}
@@ -317,7 +301,7 @@ export default function HomePage({ onScrollTo }) {
 
       {/* SECTION 3: BUKU PILIHAN */}
       <section id="buku" className="max-w-6xl mx-auto px-4 sm:px-8 scroll-mt-24">
-        <div className="bg-white rounded-3xl border border-stone-200/90 shadow-sm p-6 sm:p-10 lg:p-12 space-y-8">
+        <div className="bg-white rounded-3xl border border-stone-200 shadow-sm p-6 sm:p-10 lg:p-12 space-y-8">
           
           <div className="border-b border-stone-100 pb-5">
             <span className="text-xs font-semibold uppercase tracking-wider text-emerald-900 border-l-2 border-emerald-800 pl-2.5">
@@ -384,15 +368,15 @@ export default function HomePage({ onScrollTo }) {
         </div>
       </section>
 
-      {/* SECTION 4: TENTANG PENERBIT */}
+      {/* SECTION 4: TENTANG PENERBIT (Gaya Emasjid.id yang Bersih & Berwibawa) */}
       <section id="tentang" className="max-w-6xl mx-auto px-4 sm:px-8 scroll-mt-24">
-        <div className="bg-[#FAF8F5] rounded-3xl border border-stone-200/90 shadow-sm p-6 sm:p-10 lg:p-12 space-y-8">
+        <div className="bg-[#FAF8F5] rounded-3xl border border-stone-200 shadow-sm p-6 sm:p-10 lg:p-12 space-y-8">
           
-          <div className="max-w-3xl">
+          <div className="max-w-3xl space-y-2">
             <span className="text-xs font-semibold uppercase tracking-wider text-emerald-900 border-l-2 border-emerald-800 pl-2.5">
               {publisherInfo.aboutSection.badge}
             </span>
-            <h2 className="font-serif text-2xl sm:text-3xl font-bold text-slate-900 mt-2">
+            <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900">
               {publisherInfo.aboutSection.title}
             </h2>
           </div>
@@ -428,7 +412,7 @@ export default function HomePage({ onScrollTo }) {
 
       {/* SECTION 5: APA YANG KAMI HADIRKAN / LAYANAN PENERBITAN */}
       <section id="layanan" className="max-w-6xl mx-auto px-4 sm:px-8 scroll-mt-24">
-        <div className="bg-white rounded-3xl border border-stone-200/90 shadow-sm p-6 sm:p-10 lg:p-12 space-y-8">
+        <div className="bg-white rounded-3xl border border-stone-200 shadow-sm p-6 sm:p-10 lg:p-12 space-y-8">
           
           <div className="text-center max-w-2xl mx-auto space-y-2">
             <span className="text-xs font-semibold uppercase tracking-wider text-emerald-900 border-b-2 border-gold-500 pb-0.5">
