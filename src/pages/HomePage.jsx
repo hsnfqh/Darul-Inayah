@@ -15,7 +15,8 @@ import {
   Search,
   Sparkles,
   ArrowRight,
-  Bookmark
+  Bookmark,
+  ShieldCheck
 } from 'lucide-react';
 import { booksCatalog, catalogBooks, publisherInfo } from '../data/bookData';
 
@@ -55,13 +56,13 @@ export default function HomePage({ onScrollTo }) {
       {/* Lightbox Modal for Promo Poster */}
       {promoModalOpen && (
         <div 
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md animate-fade-in"
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/90 backdrop-blur-md animate-fade-in"
           onClick={() => setPromoModalOpen(false)}
         >
-          <div className="relative max-w-3xl max-h-[92vh] overflow-hidden rounded-2xl shadow-2xl border border-gold-500/40 bg-stone-900" onClick={e => e.stopPropagation()}>
+          <div className="relative max-w-2xl max-h-[92vh] overflow-hidden rounded-2xl shadow-2xl border border-gold-500/50 bg-stone-950" onClick={e => e.stopPropagation()}>
             <button 
               onClick={() => setPromoModalOpen(false)}
-              className="absolute top-3 right-3 z-10 p-2 bg-black/60 hover:bg-black/90 text-white rounded-full transition-colors"
+              className="absolute top-3 right-3 z-10 p-2.5 bg-black/70 hover:bg-black text-white rounded-full transition-colors border border-white/20"
               aria-label="Tutup"
             >
               <X className="w-5 h-5" />
@@ -69,57 +70,62 @@ export default function HomePage({ onScrollTo }) {
             <img 
               src="/buku-promo.jpg" 
               alt="Poster Mengapa Ragu Dengan Syariat Allah - Darul Inayah Publishing" 
-              className="w-full h-auto max-h-[90vh] object-contain mx-auto"
+              className="w-full h-auto max-h-[88vh] object-contain mx-auto"
             />
           </div>
         </div>
       )}
 
       {/* SECTION 1: HERO BERANDA */}
-      <section id="beranda" className="relative overflow-hidden bg-gradient-to-b from-[#061e11] via-[#0d3820] to-[#082615] text-white pt-14 pb-20 sm:pt-20 sm:pb-28 border-b-2 border-gold-500/30">
+      <section id="beranda" className="relative overflow-hidden bg-gradient-to-b from-[#061d11] via-[#0d341e] to-[#082214] text-white pt-14 pb-20 sm:pt-20 sm:pb-28 border-b border-gold-500/30">
         
         {/* Subtle decorative background ambient glow */}
-        <div className="absolute inset-0 pointer-events-none opacity-20">
-          <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-emerald-500/15 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-0 right-10 w-96 h-96 bg-gold-400/10 rounded-full blur-3xl"></div>
+        <div className="absolute inset-0 pointer-events-none opacity-25">
+          <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-[650px] h-[650px] bg-emerald-500/20 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-0 right-10 w-80 h-80 bg-gold-400/15 rounded-full blur-3xl"></div>
         </div>
 
         <div className="max-w-6xl mx-auto px-4 sm:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
             
-            {/* Left Col: Editorial Headline & WhatsApp CTA */}
+            {/* Left Col: Prestigious Editorial Headline & Actions */}
             <div className="lg:col-span-7 space-y-6 text-center lg:text-left">
               
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold-400/10 border border-gold-400/30 text-gold-300 text-xs font-semibold uppercase tracking-widest">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-gold-400/15 border border-gold-400/40 text-gold-300 text-xs font-semibold uppercase tracking-widest">
                 <Sparkles className="w-3.5 h-3.5 text-gold-400" />
                 <span>Darul Inayah Publishing</span>
               </div>
 
-              {/* Title & Author */}
+              {/* Main Headline */}
               <div className="space-y-3">
-                <h1 className="font-serif text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
-                  Milikilah <br />
-                  <span className="text-gold-400 italic font-medium">Sekarang</span>
+                <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-tight">
+                  Penerbitan Buku &amp; <br />
+                  <span className="text-gold-300 italic font-medium">Khazanah Keilmuan Islam</span>
                 </h1>
-                <p className="font-serif text-xl sm:text-2xl text-stone-100 font-semibold pt-1">
-                  "Mengapa Ragu Dengan Syariat Allah SWT?"
-                </p>
-                <p className="text-gold-300 text-sm sm:text-base font-serif italic">
-                  Karya: Al Ustadz Hidayat Taufiq
-                </p>
+                
+                {/* Book Highlight Callout */}
+                <div className="pt-2">
+                  <p className="text-xs uppercase tracking-wider text-gold-400 font-bold">Karya Pilihan Terbitan Terbaru:</p>
+                  <p className="font-serif text-xl sm:text-2xl text-stone-100 font-bold pt-1">
+                    "Mengapa Ragu Dengan Syariat Allah SWT?"
+                  </p>
+                  <p className="text-stone-300 text-xs sm:text-sm font-serif italic pt-0.5">
+                    Karya Al Ustadz Hidayat Taufiq
+                  </p>
+                </div>
               </div>
 
-              <p className="text-stone-200 text-sm sm:text-base leading-relaxed max-w-xl mx-auto lg:mx-0 font-light">
-                Kajian komprehensif yang membedah hikmah diutusnya para Rasul, kedudukan fitrah akal budi, serta relevansi syariat Islam di tengah tantangan zaman dan pemikiran modern.
+              <p className="text-stone-200 text-xs sm:text-sm leading-relaxed max-w-xl mx-auto lg:mx-0 font-light">
+                Sebuah kajian komprehensif yang menguraikan urgensi syariat Allah, kedudukan fitrah akal budi, serta relevansi nilai-nilai Islam dalam menjawab keraguan pemikiran kontemporer.
               </p>
 
-              {/* Primary Call-to-Action (WhatsApp Direct) */}
-              <div className="pt-3 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+              {/* Action Buttons */}
+              <div className="pt-2 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3.5">
                 <a
                   href={whatsappUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full sm:w-auto px-8 py-3.5 bg-gradient-to-r from-gold-400 to-gold-500 hover:from-gold-300 hover:to-gold-400 text-emerald-950 font-bold text-sm tracking-wider uppercase rounded-xl shadow-lg transition-all flex items-center justify-center gap-2.5 active:scale-95 border border-gold-300"
+                  className="w-full sm:w-auto px-7 py-3.5 bg-gradient-to-r from-gold-400 to-gold-500 hover:from-gold-300 hover:to-gold-400 text-emerald-950 font-bold text-xs uppercase tracking-wider rounded-xl shadow-lg transition-all flex items-center justify-center gap-2.5 active:scale-95 border border-gold-300"
                 >
                   <MessageCircle className="w-4 h-4 fill-emerald-950/20" />
                   <span>Pesan Buku via WhatsApp</span>
@@ -129,30 +135,46 @@ export default function HomePage({ onScrollTo }) {
                   onClick={() => onScrollTo && onScrollTo('katalog')}
                   className="w-full sm:w-auto px-6 py-3.5 bg-white/10 hover:bg-white/15 text-stone-100 text-xs font-bold uppercase tracking-wider rounded-xl border border-white/20 transition-all flex items-center justify-center gap-2"
                 >
-                  <span>Lihat Semua Katalog</span>
+                  <span>Jelajahi Katalog Buku</span>
                   <ArrowRight className="w-3.5 h-3.5 text-gold-300" />
                 </button>
               </div>
 
-              <p className="text-xs text-stone-300 font-light">
-                * Hubungi langsung admin resmi untuk informasi pemesanan dan pengiriman.
-              </p>
+              {/* Trust Badge */}
+              <div className="pt-2 flex flex-wrap items-center justify-center lg:justify-start gap-4 text-xs text-stone-300 font-light">
+                <span className="flex items-center gap-1.5">
+                  <ShieldCheck className="w-4 h-4 text-emerald-400" />
+                  <span>Penerbitan Resmi</span>
+                </span>
+                <span className="text-stone-500">•</span>
+                <span className="flex items-center gap-1.5">
+                  <MessageCircle className="w-4 h-4 text-gold-400" />
+                  <span>Respon Cepat: <strong>{publisherInfo.contactSection.whatsappDisplay}</strong></span>
+                </span>
+              </div>
 
             </div>
 
-            {/* Right Col: Poster Cover Visual */}
+            {/* Right Col: Poster Showcase Frame */}
             <div className="lg:col-span-5 flex justify-center">
               <div 
                 className="relative group cursor-pointer max-w-sm rounded-2xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.6)] border-2 border-gold-500/60 bg-stone-900 transition-all duration-300 hover:scale-[1.02]"
                 onClick={() => setPromoModalOpen(true)}
               >
+                {/* Top Badge */}
+                <div className="absolute top-3 left-3 z-10 bg-[#092618]/90 text-gold-300 text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-md border border-gold-400/50 backdrop-blur">
+                  Buku Pilihan Utama
+                </div>
+
                 <img 
                   src="/buku-promo.jpg" 
-                  alt="Buku Mengapa Ragu Dengan Syariat Allah SWT"
+                  alt="Poster Buku Mengapa Ragu Dengan Syariat Allah SWT - Darul Inayah Publishing" 
                   className="w-full h-auto object-cover transition-opacity duration-300 group-hover:opacity-95"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end justify-center p-4">
-                  <span className="text-xs font-medium text-white bg-black/70 px-4 py-2 rounded-lg backdrop-blur border border-gold-400/40 flex items-center gap-2">
+
+                {/* Hover overlay hint */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end justify-center p-4">
+                  <span className="text-xs font-semibold text-white bg-black/75 px-4 py-2 rounded-xl backdrop-blur border border-gold-400/40 flex items-center gap-2">
                     <Maximize2 className="w-3.5 h-3.5 text-gold-300" /> Perbesar Poster
                   </span>
                 </div>
@@ -168,7 +190,7 @@ export default function HomePage({ onScrollTo }) {
         <div className="bg-[#FAF8F5] rounded-3xl border border-stone-200/90 shadow-sm p-6 sm:p-10 lg:p-12 space-y-8">
           
           {/* Header */}
-          <div className="text-center max-w-2xl mx-auto space-y-2.5">
+          <div className="text-center max-w-2xl mx-auto space-y-2">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100/70 border border-emerald-300/80 text-emerald-900 text-xs font-bold uppercase tracking-wider">
               <BookOpen className="w-3.5 h-3.5 text-emerald-800" />
               <span>{publisherInfo.catalogSection.badge}</span>
