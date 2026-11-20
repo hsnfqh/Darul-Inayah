@@ -19,7 +19,7 @@ export default function Navbar() {
           </div>
           <div className="flex items-center space-x-3 text-xs">
             <span className="text-gold-300 font-serif italic text-[11px]">
-              "Harga Selera Pembaca"
+              "Buku untuk Peradaban"
             </span>
           </div>
         </div>

@@ -69,7 +69,7 @@ export default function Footer() {
         <div className="pt-4 border-t border-emerald-900/40 flex flex-col sm:flex-row justify-between items-center text-[11px] text-stone-400 gap-2">
           <p>© {new Date().getFullYear()} Darul Inayah Publishing. Hak Cipta Dilindungi Undang-Undang.</p>
           <p className="text-gold-400/90 font-serif italic">
-            "Milikilah Sekarang — Harga Selera Pembaca"
+            "Bersama Membangun Peradaban dengan Ilmu"
           </p>
         </div>
 

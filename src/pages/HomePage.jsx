@@ -58,9 +58,6 @@ export default function HomePage() {
 
               {/* Gold Big Titles */}
               <div className="space-y-2">
-                <div className="inline-block px-4 py-1.5 rounded-lg bg-gold-400 text-emerald-950 font-black text-xs sm:text-sm tracking-wider uppercase shadow">
-                  ⭐ HARGA SELERA PEMBACA
-                </div>
                 <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white leading-tight">
                   MILIKILAH <br />
                   <span className="text-gold-400 italic">SEKARANG</span>
@@ -89,7 +86,7 @@ export default function HomePage() {
                 </span>
                 <span className="bg-[#12452b] px-3 py-1.5 rounded-lg border border-emerald-700/60 flex items-center gap-1.5">
                   <CheckCircle className="w-3.5 h-3.5 text-gold-400" />
-                  <strong>Format Selera Pembaca</strong>
+                  <strong>Edisi Revisi Resmi</strong>
                 </span>
               </div>
 
@@ -182,14 +179,11 @@ export default function HomePage() {
 
           {/* Big Order Banner Direct WhatsApp */}
           <div className="rounded-2xl bg-gradient-to-r from-[#082213] via-[#0f3f22] to-[#12452b] text-white p-6 sm:p-8 text-center space-y-4 border border-gold-400/60 shadow-lg mt-6">
-            <div className="inline-block px-3 py-1 rounded-lg bg-gold-400 text-emerald-950 font-black text-xs uppercase tracking-wider">
-              ⭐ HARGA SELERA PEMBACA
-            </div>
             <h3 className="font-serif text-xl sm:text-2xl font-bold">
               Milikilah Buku Fisik Ini Sekarang
             </h3>
             <p className="text-xs sm:text-sm text-stone-200 max-w-xl mx-auto leading-relaxed font-light">
-              Penerbit membuka kesempatan bagi kaum Muslimin, santri, dan penuntut ilmu untuk memiliki buku ini dengan mahar/infaq selera pembaca. Pengiriman buku ke seluruh wilayah Indonesia.
+              Penerbit membuka kesempatan bagi kaum Muslimin, santri, dan penuntut ilmu untuk memiliki buku ini dengan mahar/infaq terbaik. Pengiriman buku ke seluruh wilayah Indonesia.
             </p>
             <div className="pt-2">
               <a
