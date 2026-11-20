@@ -118,6 +118,28 @@ export default function HomePage({ onScrollTo }) {
                 Sebuah kajian komprehensif yang menguraikan urgensi syariat Allah, kedudukan fitrah akal budi, serta relevansi nilai-nilai Islam dalam menjawab keraguan pemikiran kontemporer.
               </p>
 
+              {/* Mobile View: Poster Gambar Ditampilkan Dulu Sebelum Tombol Aksi */}
+              <div className="block lg:hidden my-6">
+                <div 
+                  className="relative group cursor-pointer max-w-xs mx-auto rounded-2xl overflow-hidden shadow-2xl border-2 border-gold-500/60 bg-stone-900 transition-all active:scale-95"
+                  onClick={() => setPromoModalOpen(true)}
+                >
+                  <div className="absolute top-2.5 left-2.5 z-10 bg-[#092618]/90 text-gold-300 text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded border border-gold-400/50 backdrop-blur">
+                    Buku Pilihan Utama
+                  </div>
+                  <img 
+                    src="/buku-promo.jpg" 
+                    alt="Poster Buku Mengapa Ragu Dengan Syariat Allah SWT - Darul Inayah Publishing" 
+                    className="w-full h-auto object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end justify-center p-3">
+                    <span className="text-[11px] font-semibold text-white bg-black/75 px-3 py-1.5 rounded-lg backdrop-blur border border-gold-400/40 flex items-center gap-1.5">
+                      <Maximize2 className="w-3 h-3 text-gold-300" /> Perbesar Poster
+                    </span>
+                  </div>
+                </div>
+              </div>
+
               {/* Action Buttons */}
               <div className="pt-2 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3.5">
                 <a
@@ -141,8 +163,8 @@ export default function HomePage({ onScrollTo }) {
 
             </div>
 
-            {/* Right Col: Poster Showcase Frame */}
-            <div className="lg:col-span-5 flex justify-center">
+            {/* Right Col: Poster Showcase Frame (Desktop Only) */}
+            <div className="hidden lg:flex lg:col-span-5 justify-center">
               <div 
                 className="relative group cursor-pointer max-w-sm rounded-2xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.6)] border-2 border-gold-500/60 bg-stone-900 transition-all duration-300 hover:scale-[1.02]"
                 onClick={() => setPromoModalOpen(true)}
