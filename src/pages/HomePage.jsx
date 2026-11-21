@@ -17,7 +17,9 @@ import {
   ArrowRight,
   Building2,
   Clock,
-  Send
+  Send,
+  Filter,
+  ChevronDown
 } from 'lucide-react';
 import { booksCatalog, catalogBooks, publisherInfo } from '../data/bookData';
 
@@ -211,11 +213,11 @@ export default function HomePage({ onScrollTo }) {
             </p>
           </div>
 
-          {/* Search Box & Category Filters */}
-          <div className="space-y-4 max-w-3xl mx-auto">
+          {/* Search Box & Category Filter Side-by-Side */}
+          <div className="max-w-3xl mx-auto flex flex-col sm:flex-row items-center gap-3">
             {/* Search Input Bar */}
-            <div className="relative">
-              <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+            <div className="relative flex-1 w-full">
+              <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none">
                 <Search className="w-4 h-4 text-emerald-800" />
               </div>
               <input
@@ -223,36 +225,38 @@ export default function HomePage({ onScrollTo }) {
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder={publisherInfo.catalogSection.searchPlaceholder}
-                className="w-full pl-11 pr-10 py-3 bg-[#FAF8F5] border border-stone-300 rounded-xl text-xs sm:text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-800 focus:border-emerald-800 shadow-sm transition-all"
+                className="w-full pl-10 pr-9 py-3 bg-[#FAF8F5] border border-stone-300 rounded-xl text-xs sm:text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-800 focus:border-emerald-800 shadow-sm transition-all"
               />
               {searchQuery && (
                 <button 
                   onClick={() => setSearchQuery('')}
                   className="absolute inset-y-0 right-0 pr-3 flex items-center text-slate-400 hover:text-slate-600"
+                  aria-label="Hapus pencarian"
                 >
                   <X className="w-4 h-4" />
                 </button>
               )}
             </div>
 
-            {/* Category Filter Chips */}
-            <div className="flex flex-wrap items-center justify-center gap-2 pt-1">
-              {categories.map((cat) => {
-                const isActive = selectedCategory === cat;
-                return (
-                  <button
-                    key={cat}
-                    onClick={() => setSelectedCategory(cat)}
-                    className={`px-3.5 py-1.5 rounded-lg text-xs font-semibold transition-all ${
-                      isActive
-                        ? 'bg-[#0f3f22] text-gold-300 shadow-sm border border-emerald-900'
-                        : 'bg-white border border-stone-200 text-slate-700 hover:bg-emerald-50/60 hover:text-emerald-900'
-                    }`}
-                  >
-                    {cat}
-                  </button>
-                );
-              })}
+            {/* Category Filter Dropdown Beside Search Bar */}
+            <div className="relative sm:w-56 w-full flex-shrink-0">
+              <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-emerald-800">
+                <Filter className="w-4 h-4" />
+              </div>
+              <select
+                value={selectedCategory}
+                onChange={(e) => setSelectedCategory(e.target.value)}
+                className="w-full pl-9 pr-8 py-3 bg-[#FAF8F5] border border-stone-300 rounded-xl text-xs sm:text-sm font-semibold text-slate-800 focus:outline-none focus:ring-2 focus:ring-emerald-800 focus:border-emerald-800 shadow-sm appearance-none cursor-pointer transition-all"
+              >
+                {categories.map((cat) => (
+                  <option key={cat} value={cat}>
+                    {cat === 'Semua' ? 'Semua Kategori' : cat}
+                  </option>
+                ))}
+              </select>
+              <div className="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none text-slate-500">
+                <ChevronDown className="w-4 h-4" />
+              </div>
             </div>
           </div>
 

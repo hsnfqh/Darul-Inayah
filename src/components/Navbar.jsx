@@ -31,26 +31,13 @@ export default function Navbar({ onScrollTo }) {
     <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-stone-200 shadow-sm transition-all">
       {/* Top Utility Bar */}
       <div className="bg-[#0b291b] text-emerald-100/90 text-xs py-2 px-4 sm:px-6 lg:px-8 border-b border-emerald-950/40">
-        <div className="max-w-7xl mx-auto flex justify-between items-center">
-          <div className="flex items-center gap-2">
-            <span className="bg-gold-500/20 text-gold-300 px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider border border-gold-400/30 whitespace-nowrap">
-              Official Publisher
-            </span>
-            <span className="text-[11px] font-medium text-stone-200 hidden sm:inline whitespace-nowrap">
-              {publisherInfo.name} — {publisherInfo.tagline}
-            </span>
-          </div>
-          <div className="flex items-center gap-4 text-xs whitespace-nowrap">
-            <a 
-              href={whatsappUrl} 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="text-gold-300 hover:text-white font-medium flex items-center gap-1.5 transition-colors whitespace-nowrap"
-            >
-              <MessageCircle className="w-3.5 h-3.5 text-emerald-400" />
-              <span>WhatsApp: <strong className="font-mono text-white">{publisherInfo.contactSection.whatsappDisplay}</strong></span>
-            </a>
-          </div>
+        <div className="max-w-7xl mx-auto flex items-center gap-2">
+          <span className="bg-gold-500/20 text-gold-300 px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider border border-gold-400/30 whitespace-nowrap">
+            Official Publisher
+          </span>
+          <span className="text-[11px] font-medium text-stone-200 whitespace-nowrap">
+            {publisherInfo.name} — {publisherInfo.tagline}
+          </span>
         </div>
       </div>
 
